@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IE Empresarial Petrolina | Valter Moraes — 17/03</title>
+    <meta name="description"
+        content="Sua inteligência emocional é o teto do seu faturamento. Evento presencial para empresários em Petrolina. 17 de março. Apenas R$ 47.">
+
+    <!-- OG Tags -->
+    <meta property="og:title" content="IE Empresarial Petrolina | Valter Moraes">
+    <meta property="og:description"
+        content="Sua inteligência emocional é o teto do seu faturamento. 17/03 em Petrolina. R$ 47.">
+    <meta property="og:type" content="website">
+
+    <!-- Preload Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bg: '#0A0A0A',
+                        'bg-deep': '#050505',
+                        text: '#F5F0E8',
+                        gold: '#C9A84C',
+                        'gold-dark': '#a68735',
+                        blue: '#1A3A5C',
+                        red: '#8B2E2E',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    },
+                    maxWidth: {
+                        'mobile': '420px',
+                        'content': '720px',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0A0A;
+            color: #F5F0E8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Hero overlay */
+        .hero-overlay {
+            background: linear-gradient(to top, #0A0A0A 5%, rgba(10, 10, 10, 0.7) 50%, rgba(10, 10, 10, 0.3) 100%);
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .animate-fade-in-up-delay {
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        /* Scroll indicator bounce */
+        @keyframes gentleBounce {
+
+            0%,
+            100% {
+                transform: translateY(0) translateX(-50%);
+            }
+
+            50% {
+                transform: translateY(8px) translateX(-50%);
+            }
+        }
+
+        .scroll-indicator {
+            animation: gentleBounce 2s ease-in-out infinite;
+        }
+
+        /* FAQ answer transition */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.35s ease, opacity 0.25s ease;
+        }
+
+        .faq-answer.open {
+            opacity: 1;
+        }
+
+        /* Intersection Observer fade-in */
+        .reveal {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Pulse subtle for CTA */
+        @keyframes subtlePulse {
+
+            0%,
+            100% {
+                box-shadow: 0 4px 16px rgba(201, 168, 76, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 4px 24px rgba(201, 168, 76, 0.5);
+            }
+        }
+
+        .pulse-cta {
+            animation: subtlePulse 2.5s ease-in-out infinite;
+        }
+    </style>
+
+    <!-- META PIXEL -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1905842826533412');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none" 
+           src="https://www.facebook.com/tr?id=1905842826533412&ev=PageView&noscript=1"/>
+    </noscript>
+</head>
+
+<body class="antialiased">
+
+    <!-- ============================================= -->
+    <!-- SEÇÃO 1 — HERO                                -->
+    <!-- ============================================= -->
+    <section class="relative h-screen min-h-[640px] flex flex-col justify-end overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/valter.JPEG"
+                alt="Valter Moraes — Especialista em IE Empresarial" class="w-full h-full object-cover object-top"
+                loading="eager">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 px-5 md:px-6 pb-10 max-w-content mx-auto w-full">
+            <!-- Event Name Badge -->
+            <div class="inline-flex items-center gap-2 mb-4 px-3 py-1.5 rounded-md text-xs font-bold tracking-[0.2em] uppercase animate-fade-in-up"
+                style="background: rgba(201, 168, 76, 0.15); border: 1px solid rgba(201, 168, 76, 0.4); color: #C9A84C;">
+                IE EMPRESARIAL PETROLINA
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="font-serif text-[26px] md:text-[38px] lg:text-[46px] font-bold leading-[1.12] mb-4 text-white animate-fade-in-up"
+                style="text-shadow: 0 2px 8px rgba(0,0,0,0.6);">
+                Sua inteligência emocional é o teto do seu faturamento.
+            </h1>
+
+            <!-- Sub-headline: O que é + promessa -->
+            <p class="text-gold/90 font-sans text-[15px] md:text-base leading-relaxed mb-6 animate-fade-in-up max-w-lg">
+                Mentoria coletiva presencial com Valter Moraes — o protocolo para empresários de alto nível que querem crescer sem perder a paz e a família.
+            </p>
+
+            <!-- Event Details -->
+            <div class="flex flex-wrap items-center gap-3 mb-8 animate-fade-in-up-delay">
+                <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-text/90"
+                    style="background: rgba(10, 10, 10, 0.5); border: 1px solid rgba(245, 240, 232, 0.15);">
+                    <span class="material-icons text-gold text-[16px]">event</span>
+                    17/03 • Terça
+                </div>
+                <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-text/90"
+                    style="background: rgba(10, 10, 10, 0.5); border: 1px solid rgba(245, 240, 232, 0.15);">
+                    <span class="material-icons text-gold text-[16px]">schedule</span>
+                    19h
+                </div>
+                <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-text/90"
+                    style="background: rgba(10, 10, 10, 0.5); border: 1px solid rgba(245, 240, 232, 0.15);">
+                    <span class="material-icons text-gold text-[16px]">location_on</span>
+                    Petrolina • Presencial
+                </div>
+                <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-bold text-gold"
+                    style="background: rgba(201, 168, 76, 0.1); border: 1px solid rgba(201, 168, 76, 0.3);">
+                    <span class="material-icons text-[16px]">confirmation_number</span>
+                    R$ 47
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <a href="#inscricao"
+                class="block w-full bg-gold hover:bg-gold-dark text-bg font-bold text-base py-4 rounded-lg text-center transition-all duration-300 shadow-lg animate-fade-in-up-delay"
+                style="min-height: 56px; box-shadow: 0 4px 16px rgba(201, 168, 76, 0.3);">
+                QUERO MEU INGRESSO
+            </a>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-3 left-1/2 scroll-indicator opacity-50 z-10">
+            <span class="material-icons text-gold text-3xl">expand_more</span>
+        </div>
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- SEÇÃO 2 — TEXTO DE APOIO                      -->
+    <!-- ============================================= -->
+    <section class="py-16 md:py-20 px-5 md:px-6">
+        <div class="max-w-content mx-auto space-y-6 reveal">
+
+            <p class="text-base md:text-lg leading-[1.7] text-text/90">
+                Empresário, você já aprendeu a fazer dinheiro. Já provou que é capaz. Seu negócio funciona, seu nome é
+                respeitado, seu faturamento cresce.
+            </p>
+
+            <p class="text-base md:text-lg leading-[1.7] text-text/90">
+                Mas por dentro, a história é outra.
+            </p>
+
+            <p class="text-base md:text-lg leading-[1.7] text-text/90">
+                Você toma decisões no <span class="text-gold font-semibold">medo</span>, na <span
+                    class="text-gold font-semibold">raiva</span>, na <span
+                    class="text-gold font-semibold">ansiedade</span>. Perde o sono por causa do <span
+                    class="text-gold font-semibold">fluxo de caixa</span>. Grita com quem mais ama depois de um dia
+                difícil na empresa. Sente que está sempre correndo — mas nunca chega.
+            </p>
+
+            <p class="text-base md:text-lg leading-[1.7] text-text/90">
+                Você carrega o piano e a orquestra sozinho. Chega em casa e é um estranho para quem mais ama. E o
+                pior: ninguém sabe — porque empresário não pode parecer fraco.
+            </p>
+
+            <p class="text-base md:text-lg leading-[1.7] text-text/90 font-semibold">
+                Ninguém vai te falar isso na sua cara: o problema da sua empresa não é gestão. <span class="text-gold">É você.</span>
+            </p>
+
+            <!-- Blockquote -->
+            <div class="my-10 py-4 pl-5" style="border-left: 3px solid #C9A84C;">
+                <p class="font-serif text-xl md:text-2xl italic text-white leading-snug">
+                    "Dia 17 de março, em Petrolina, isso muda."
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- SEÇÃO 3 — CTA 1 + ALAVANCAGEM DE PREÇO        -->
+    <!-- ============================================= -->
+    <section class="py-16 px-5 md:px-6">
+        <div class="max-w-mobile mx-auto reveal">
+
+            <!-- Price Card -->
+            <div class="rounded-xl p-6 md:p-8 text-center mb-6"
+                style="background: rgba(201, 168, 76, 0.05); border: 1px solid rgba(201, 168, 76, 0.2);">
+                <p class="text-xs text-gold/80 uppercase tracking-widest mb-2">LOTE PROMOCIONAL</p>
+                <p class="text-[#666] line-through text-lg mb-1">R$ 197</p>
+                <p class="text-sm text-text/60 mb-2">por apenas</p>
+                <p class="text-4xl font-bold text-gold font-serif">R$ 47</p>
+                <p class="text-xs text-text/50 mt-3 px-4">Lote normal de R$ 197 em breve. Estamos nas últimas unidades.</p>
+            </div>
+
+            <!-- CTA Button -->
+            <a href="#inscricao"
+                class="block w-full bg-gold hover:bg-gold-dark text-bg font-bold text-base py-4 rounded-lg text-center transition-all duration-300 mb-4"
+                style="min-height: 56px; box-shadow: 0 4px 16px rgba(201, 168, 76, 0.3);">
+                QUERO MEU INGRESSO POR R$ 47
+            </a>
+
+            <!-- Urgency -->
+            <div class="rounded-lg p-4 text-center mb-6"
+                style="background: rgba(139, 46, 46, 0.15); border: 1px solid rgba(139, 46, 46, 0.3);">
+                <p class="text-sm font-semibold" style="color: #D4A0A0;">⚠️ 90% dos ingressos do lote promocional já foram vendidos</p>
+                <p class="text-xs text-text/60 mt-1">A oferta pode se encerrar a qualquer momento.</p>
+            </div>
+
+            <!-- Leverage text -->
+            <p class="text-center text-sm text-text/50 mb-6">
+                Uma única decisão emocional errada pode custar 5x mais que esse ingresso. Esse é o custo de <em>não</em>
+                ir.
+            </p>
+
+            <!-- Security -->
+            <div class="flex items-center justify-center gap-2 text-xs text-text/40">
+                <span class="material-icons text-[14px]">lock</span>
+                Pagamento seguro via Kiwify
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- SEÇÃO 4 — PROMESSA DO EVENTO                  -->
+    <!-- ============================================= -->
+    <section class="py-16 md:py-20 px-5 md:px-6" style="background: rgba(26, 58, 92, 0.08);">
+        <div class="max-w-content mx-auto reveal">
+
+            <h2 class="font-serif text-2xl md:text-3xl text-gold text-center mb-4">
+                O QUE VAI ACONTECER<br>DIA 17/03
+            </h2>
+
+            <p class="text-center text-text/70 text-base mb-10 max-w-md mx-auto">
+                Uma imersão presencial de alto nível, desenhada para empresários que faturam alto mas sentem que pagam
+                um preço emocional invisível.
+            </p>
+
+            <div class="flex flex-col gap-3">
+                <!-- Card 1 -->
+                <div class="p-5 rounded-xl flex items-start gap-4"
+                    style="background: rgba(26, 58, 92, 0.15); border: 1px solid rgba(26, 58, 92, 0.3);">
+                    <span class="material-icons text-gold text-2xl mt-0.5">school</span>
+                    <div>
+                        <h3 class="font-bold text-base text-white mb-1">Mentoria Coletiva</h3>
+                        <p class="text-sm text-text/60">Imersão direta com Valter Moraes sobre gestão emocional aplicada
+                            ao negócio.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-5 rounded-xl flex items-start gap-4"
+                    style="background: rgba(26, 58, 92, 0.15); border: 1px solid rgba(26, 58, 92, 0.3);">
+                    <span class="material-icons text-gold text-2xl mt-0.5">handshake</span>
+                    <div>
+                        <h3 class="font-bold text-base text-white mb-1">Networking Dirigido</h3>
+                        <p class="text-sm text-text/60">Conexão real com outros empresários de Petrolina que jogam o
+                            jogo alto.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-5 rounded-xl flex items-start gap-4"
+                    style="background: rgba(26, 58, 92, 0.15); border: 1px solid rgba(26, 58, 92, 0.3);">
+                    <span class="material-icons text-gold text-2xl mt-0.5">shield</span>
+                    <div>
+                        <h3 class="font-bold text-base text-white mb-1">Protocolo Prático</h3>
+                        <p class="text-sm text-text/60">Ferramentas de aplicação imediata — você sai do evento já usando
+                            no dia seguinte.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- SEÇÃO 5 — BULLET POINTS                       -->
+    <!-- ============================================= -->
+    <section class="py-16 md:py-20 px-5 md:px-6">
+        <div class="max-w-content mx-auto reveal">
+
+            <h2 class="font-serif text-2xl md:text-3xl text-gold text-center mb-10">
+                O QUE VOCÊ VAI<br>DESCOBRIR
+            </h2>
+
+            <div class="space-y-4 max-w-md mx-auto">
+                <div class="p-4 pl-5 rounded-r-lg"
+                    style="background: rgba(245, 240, 232, 0.03); border-left: 2px solid #C9A84C;">
+                    <p class="text-[15px] text-text/80 leading-relaxed">
+                        <span class="text-gold">✦</span> <span class="text-text font-bold">O Protocolo de 5
+                            Decisões Sob Pressão</span> — a ferramenta que separa o empresário que reage do que lidera — e que você vai usar na segunda-feira de manhã quando o caos bater na porta.
+                    </p>
+                </div>
+
+                <div class="p-4 pl-5 rounded-r-lg"
+                    style="background: rgba(245, 240, 232, 0.03); border-left: 2px solid #C9A84C;">
+                    <p class="text-[15px] text-text/80 leading-relaxed">
+                        <span class="text-gold">✦</span> <span class="text-text font-bold">Por que o empresário que
+                            grita</span> está literalmente queimando dinheiro — e como substituir raiva por autoridade
+                        real.
+                    </p>
+                </div>
+
+                <div class="p-4 pl-5 rounded-r-lg"
+                    style="background: rgba(245, 240, 232, 0.03); border-left: 2px solid #C9A84C;">
+                    <p class="text-[15px] text-text/80 leading-relaxed">
+                        <span class="text-gold">✦</span> <span class="text-text font-bold">A Hierarquia de
+                            Valores</span> que blinda sua família do estresse do negócio (sem virar refém da culpa).
+                    </p>
+                </div>
+
+                <div class="p-4 pl-5 rounded-r-lg"
+                    style="background: rgba(245, 240, 232, 0.03); border-left: 2px solid #C9A84C;">
+                    <p class="text-[15px] text-text/80 leading-relaxed">
+                        <span class="text-gold">✦</span> <span class="text-text font-bold">Blindagem Emocional</span> —
+                        o método para não levar pra casa o peso que é da empresa.
+                    </p>
+                </div>
+
+                <div class="p-4 pl-5 rounded-r-lg"
+                    style="background: rgba(245, 240, 232, 0.03); border-left: 2px solid #C9A84C;">
+                    <p class="text-[15px] text-text/80 leading-relaxed">
+                        <span class="text-gold">✦</span> <span class="text-text font-bold">A sala que Petrolina nunca teve</span> —
+                        empresários que faturam R$ 50k+/mês, na mesma mesa, falando sobre o que ninguém fala em público — e por que 3 conexões reais podem mudar seu próximo trimestre.
+                    </p>
+                </div>
+
+                <div class="p-4 pl-5 rounded-r-lg"
+                    style="background: rgba(245, 240, 232, 0.03); border-left: 2px solid #C9A84C;">
+                    <p class="text-[15px] text-text/80 leading-relaxed">
+                        <span class="text-gold">✦</span> <span class="text-text font-bold">"Meu pai era assim e eu estou repetindo."</span>
+                        Se você reconhece esse padrão, este evento foi feito para você — descubra como quebrar o ciclo e construir um legado que vai além do CNPJ.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- SEÇÃO 6 — GARANTIA + ESCASSEZ                 -->
+    <!-- ============================================= -->
+    <section class="py-12 md:py-16 px-5 md:px-6">
+        <div class="max-w-mobile mx-auto grid gap-6 reveal">
+
+            <!-- Garantia -->
+            <div class="rounded-xl p-6 text-center"
+                style="background: rgba(201, 168, 76, 0.05); border: 1px solid #C9A84C;">
+                <div class="flex justify-center mb-3">
+                    <span class="material-icons text-gold text-4xl">verified_user</span>
+                </div>
+                <h3 class="text-gold text-xs tracking-[2px] uppercase font-bold mb-3">GARANTIA</h3>
+                <p class="font-serif text-lg text-white italic leading-relaxed">
+                    "Se nos primeiros 30 minutos de evento você sentir que não é pra você, levante a mão. Devolvemos
+                    100% na hora, sem pergunta nenhuma."
+                </p>
+                <p class="text-sm text-text/60 mt-4 font-semibold">O risco é 100% nosso.</p>
+            </div>
+
+            <!-- Urgency -->
+            <div class="rounded-xl p-6 text-center relative overflow-hidden"
+                style="background: rgba(139, 46, 46, 0.1); border: 1px solid rgba(139, 46, 46, 0.3);">
+                <h3 class="text-[22px] font-bold mb-2" style="color: #D4A0A0;">⚠️ ÚLTIMAS UNIDADES</h3>
+                <p class="text-sm text-text/60">90% dos ingressos do lote promocional já foram vendidos.</p>
+                <p class="text-sm text-text/60 font-bold mt-2">A oferta pode se encerrar a qualquer momento.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- SEÇÃO 7 — CTA 2 + OFERTA CASAL                -->
+    <!-- ============================================= -->
+    <section class="py-12 md:py-16 px-5 md:px-6">
+        <div class="max-w-mobile mx-auto reveal">
+
+            <!-- CTA -->
+            <a href="#inscricao"
+                class="block w-full bg-gold hover:bg-gold-dark text-bg font-bold text-base py-4 rounded-lg text-center transition-all duration-300 mb-8"
+                style="min-height: 56px; box-shadow: 0 4px 16px rgba(201, 168, 76, 0.3);">
+                GARANTIR MINHA VAGA NO LOTE PROMOCIONAL — R$ 47
+            </a>
+
+            <!-- Next Batch Preview -->
+            <div class="rounded-xl p-5 text-center"
+                style="background: rgba(245, 240, 232, 0.03); border: 1px solid rgba(245, 240, 232, 0.1);">
+                <p class="text-sm text-text/60 mb-2">Lote normal chegando em breve</p>
+                <p class="text-2xl font-bold text-text/40 line-through">R$ 197</p>
+                <p class="text-xs text-text/30 mt-2">Aproveite o lote promocional enquanto durarem as unidades</p>
+            </div>
+
+            <!-- Security -->
+            <div class="flex items-center justify-center gap-2 text-xs text-text/40 mt-6">
+                <span class="material-icons text-[14px]">lock</span>
+                Pagamento seguro via Kiwify
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- SEÇÃO 8 — FRASE PERSUASIVA (QUEBRA VISUAL)    -->
+    <!-- ============================================= -->
+    <section class="py-20 md:py-24 px-5 md:px-6 text-center">
+        <!-- Linha decorativa -->
+        <div class="w-10 h-[1px] mx-auto mb-10" style="background: rgba(201, 168, 76, 0.4);"></div>
+
+        <p class="font-serif italic text-[20px] md:text-[24px] text-gold leading-snug max-w-lg mx-auto"
+            style="opacity: 0.9;">
+            "Pois que aproveita ao homem ganhar o mundo inteiro, se perder a sua alma?" — e a sua mesa de jantar.
+        </p>
+
+        <!-- Linha decorativa -->
+        <div class="w-10 h-[1px] mx-auto mt-10" style="background: rgba(201, 168, 76, 0.4);"></div>
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- SEÇÃO 9 — BIO DO EXPERT                       -->
+    <!-- ============================================= -->
+    <section class="py-16 md:py-20 px-5 md:px-6" style="background: rgba(245, 240, 232, 0.03);">
+        <div class="max-w-content mx-auto reveal">
+
+            <h2 class="font-serif text-2xl md:text-3xl text-gold text-center mb-10">
+                QUEM É<br>VALTER MORAES
+            </h2>
+
+            <!-- Photo + Name Header -->
+            <div class="flex items-center gap-4 mb-6">
+                <img src="assets/valter.JPEG"
+                    alt="Valter Moraes" class="w-[120px] h-[120px] rounded-full object-cover shrink-0"
+                    style="border: 2px solid #C9A84C;" loading="lazy">
+                <div>
+                    <p class="text-xl font-bold text-text">Valter Moraes</p>
+                    <p class="text-sm text-gold uppercase tracking-wider">Especialista em IE Empresarial</p>
+                </div>
+            </div>
+
+            <!-- Bio text -->
+            <div class="space-y-4 text-text/70 text-base leading-relaxed">
+                <p>
+                    Especialista em Inteligência Emocional aplicada a negócios, Valter já mentorou centenas de
+                    empresários no Nordeste que faturam de R$ 30k a R$ 500k/mês — e descobriram que o maior gargalo do
+                    crescimento não era estratégia, era eles mesmos.
+                </p>
+                <p>
+                    Com uma abordagem prática e direta (sem misticismo, sem coach de palco), ele desenvolveu protocolos
+                    de gestão emocional que empresários aplicam no dia seguinte — com impacto direto no faturamento, na
+                    equipe e na família.
+                </p>
+
+                <p class="font-serif italic text-text/80 text-lg pt-2">
+                    "Agora, ele volta a Petrolina — sua cidade — com um formato inédito: mentoria coletiva presencial
+                    para empresários de alto nível."
+                </p>
+            </div>
+
+            <!-- Instagram -->
+            <a href="https://instagram.com/valtermoraes" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-lg text-sm text-gold hover:bg-gold/10 transition-colors"
+                style="border: 1px solid #C9A84C;">
+                <span class="material-icons text-sm">photo_camera</span> @valtermoraes
+            </a>
+        </div>
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- SEÇÃO 10 — PROVA SOCIAL                       -->
+    <!-- ============================================= -->
+    <section class="py-12 md:py-16 px-5 md:px-6">
+        <div class="max-w-content mx-auto reveal">
+            <div class="rounded-xl p-6 md:p-8 text-center"
+                style="background: rgba(201, 168, 76, 0.04); border: 1px solid rgba(201, 168, 76, 0.15);">
+
+                <p class="text-gold font-bold text-lg md:text-xl mb-4">
+                    +500 empresários já passaram pelo método do Valter Moraes.
+                </p>
+
+                <p class="text-text/60 text-sm mb-6 max-w-md mx-auto">
+                    De donos de agências a empresários do agronegócio, de quem fatura R$ 30k a quem fatura R$ 500k/mês
+                    — todos descobriram que o maior gargalo do crescimento não era estratégia. Era eles mesmos.
+                </p>
+
+                <div class="py-4 px-5 rounded-lg mx-auto max-w-sm"
+                    style="background: rgba(10, 10, 10, 0.5); border: 1px solid rgba(245, 240, 232, 0.08);">
+                    <p class="font-serif italic text-text/80 text-base leading-relaxed">
+                        "Eu achava que precisava de mais gestão. Depois do Valter, entendi que precisava de mais domínio
+                        próprio. Meu faturamento subiu, mas o que mudou de verdade foi minha casa."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- SEÇÃO 11 — FAQ (ACCORDION)                    -->
+    <!-- ============================================= -->
+    <section class="py-16 md:py-20 px-5 md:px-6">
+        <div class="max-w-content mx-auto">
+
+            <h2 class="font-serif text-2xl md:text-3xl text-gold text-center mb-10">
+                PERGUNTAS<br>FREQUENTES
+            </h2>
+
+            <div class="max-w-md mx-auto" id="faq-container">
+
+                <!-- FAQ 1 (aberto por padrão) -->
+                <div class="faq-item" style="border-bottom: 1px solid rgba(245, 240, 232, 0.1);">
+                    <button class="w-full py-4 flex justify-between items-center text-left focus:outline-none group"
+                        aria-expanded="true">
+                        <span class="font-semibold text-base text-text group-hover:text-gold transition-colors">Preciso
+                            faturar exatamente R$ 50k?</span>
+                        <span
+                            class="material-icons text-gold transition-transform duration-300 rotate-180">expand_more</span>
+                    </button>
+                    <div class="faq-answer open" style="max-height: 200px; opacity: 1;">
+                        <div class="pb-4 text-[15px] text-text/70 leading-relaxed">
+                            Não. R$ 50k é uma referência. Se você fatura menos mas tem mentalidade de crescimento, ou
+                            muito mais e sente os sintomas do sucesso desalinhado (estresse, conflitos em casa,
+                            solidão), este evento é pra você.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item" style="border-bottom: 1px solid rgba(245, 240, 232, 0.1);">
+                    <button class="w-full py-4 flex justify-between items-center text-left focus:outline-none group"
+                        aria-expanded="false">
+                        <span class="font-semibold text-base text-text group-hover:text-gold transition-colors">Vai ter lote normal de R$ 197?</span>
+                        <span class="material-icons text-gold transition-transform duration-300">expand_more</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="pb-4 text-[15px] text-text/70 leading-relaxed">
+                            Sim. Após o esgotamento do lote promocional de R$ 47, abriremos o lote normal por R$ 197. 
+                            Não há previsão de data — depende da velocidade de vendas do lote atual.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item" style="border-bottom: 1px solid rgba(245, 240, 232, 0.1);">
+                    <button class="w-full py-4 flex justify-between items-center text-left focus:outline-none group"
+                        aria-expanded="false">
+                        <span class="font-semibold text-base text-text group-hover:text-gold transition-colors">Quanto
+                            tempo dura?</span>
+                        <span class="material-icons text-gold transition-transform duration-300">expand_more</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="pb-4 text-[15px] text-text/70 leading-relaxed">
+                            O evento principal tem duração de aproximadamente 3 horas, seguido de um momento de
+                            networking livre. Horário exato será comunicado via WhatsApp aos inscritos.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item" style="border-bottom: 1px solid rgba(245, 240, 232, 0.1);">
+                    <button class="w-full py-4 flex justify-between items-center text-left focus:outline-none group"
+                        aria-expanded="false">
+                        <span class="font-semibold text-base text-text group-hover:text-gold transition-colors">É
+                            palestra motivacional?</span>
+                        <span class="material-icons text-gold transition-transform duration-300">expand_more</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="pb-4 text-[15px] text-text/70 leading-relaxed">
+                            Não. Zero "uhuuu". É mentoria coletiva com protocolo prático. Você sai com ferramentas para
+                            aplicar no dia seguinte na sua empresa e na sua casa. Sem fórmula mágica, sem grito de
+                            guerra.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item" style="border-bottom: 1px solid rgba(245, 240, 232, 0.1);">
+                    <button class="w-full py-4 flex justify-between items-center text-left focus:outline-none group"
+                        aria-expanded="false">
+                        <span class="font-semibold text-base text-text group-hover:text-gold transition-colors">E se eu
+                            não gostar?</span>
+                        <span class="material-icons text-gold transition-transform duration-300">expand_more</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="pb-4 text-[15px] text-text/70 leading-relaxed">
+                            Se nos primeiros 30 minutos você sentir que não é pra você, levante a mão. Devolvemos 100%
+                            do valor na hora, sem burocracia. O risco é todo nosso.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="faq-item" style="border-bottom: 1px solid rgba(245, 240, 232, 0.1);">
+                    <button class="w-full py-4 flex justify-between items-center text-left focus:outline-none group"
+                        aria-expanded="false">
+                        <span class="font-semibold text-base text-text group-hover:text-gold transition-colors">Onde
+                            será?</span>
+                        <span class="material-icons text-gold transition-transform duration-300">expand_more</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="pb-4 text-[15px] text-text/70 leading-relaxed">
+                            Em Petrolina-PE. O endereço exato será enviado por WhatsApp para todos os inscritos 48h
+                            antes do evento.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 7 -->
+                <div class="faq-item" style="border-bottom: 1px solid rgba(245, 240, 232, 0.1);">
+                    <button class="w-full py-4 flex justify-between items-center text-left focus:outline-none group"
+                        aria-expanded="false">
+                        <span class="font-semibold text-base text-text group-hover:text-gold transition-colors">R$ 47 é
+                            muito barato. Qual é a pegada?</span>
+                        <span class="material-icons text-gold transition-transform duration-300">expand_more</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="pb-4 text-[15px] text-text/70 leading-relaxed">
+                            O valor é uma taxa de compromisso, não de lucro. Queremos apenas quem realmente vai
+                            comparecer. O evento poderia custar R$ 497 (e vai custar no futuro).
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 8 — Terça-feira -->
+                <div class="faq-item" style="border-bottom: 1px solid rgba(245, 240, 232, 0.1);">
+                    <button class="w-full py-4 flex justify-between items-center text-left focus:outline-none group"
+                        aria-expanded="false">
+                        <span class="font-semibold text-base text-text group-hover:text-gold transition-colors">Mas é
+                            numa terça-feira. Como saio da empresa?</span>
+                        <span class="material-icons text-gold transition-transform duration-300">expand_more</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="pb-4 text-[15px] text-text/70 leading-relaxed">
+                            Esse é exatamente o ponto. Se você não consegue sair da empresa por 4 horas sem que tudo
+                            desmorone, o problema é maior do que você imagina — e esse evento foi feito para resolver
+                            isso. O horário será pensado para não comprometer o dia inteiro.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 9 -->
+                <div class="faq-item" style="border-bottom: 1px solid rgba(245, 240, 232, 0.1);">
+                    <button class="w-full py-4 flex justify-between items-center text-left focus:outline-none group"
+                        aria-expanded="false">
+                        <span class="font-semibold text-base text-text group-hover:text-gold transition-colors">Quando
+                            acaba o lote promocional?</span>
+                        <span class="material-icons text-gold transition-transform duration-300">expand_more</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="pb-4 text-[15px] text-text/70 leading-relaxed">
+                            O lote promocional de R$ 47 está com 90% das unidades vendidas. Não temos data definida 
+                            para encerramento — pode acontecer a qualquer momento quando atingirmos a capacidade.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- SEÇÃO 11 — FORMULÁRIO PRÉ-CHECKOUT            -->
+    <!-- ============================================= -->
+    <section id="inscricao" class="py-16 md:py-20 px-5 md:px-6">
+        <div class="max-w-mobile mx-auto">
+
+            <h2 class="font-serif text-2xl md:text-3xl text-gold text-center mb-8">
+                GARANTA SUA<br>VAGA AGORA
+            </h2>
+
+            <!-- Form Card -->
+            <div class="rounded-2xl p-6 md:p-8"
+                style="background: rgba(245, 240, 232, 0.03); border: 1px solid rgba(201, 168, 76, 0.2);">
+
+                <form id="registration-form" class="space-y-5" novalidate>
+
+                    <!-- Nome -->
+                    <div>
+                        <label for="name" class="block text-[13px] uppercase tracking-wider mb-1.5"
+                            style="color: rgba(245, 240, 232, 0.6); letter-spacing: 1px;">Nome completo</label>
+                        <input type="text" id="name" name="name" required autocomplete="name"
+                            class="w-full rounded-lg py-3.5 px-4 text-base text-text outline-none transition-all duration-200"
+                            style="background: rgba(10, 10, 10, 0.8); border: 1px solid rgba(201, 168, 76, 0.25); font-size: 16px;"
+                            placeholder="Seu nome">
+                    </div>
+
+                    <!-- E-mail -->
+                    <div>
+                        <label for="email" class="block text-[13px] uppercase tracking-wider mb-1.5"
+                            style="color: rgba(245, 240, 232, 0.6); letter-spacing: 1px;">E-mail</label>
+                        <input type="email" id="email" name="email" required autocomplete="email"
+                            class="w-full rounded-lg py-3.5 px-4 text-base text-text outline-none transition-all duration-200"
+                            style="background: rgba(10, 10, 10, 0.8); border: 1px solid rgba(201, 168, 76, 0.25); font-size: 16px;"
+                            placeholder="seu@email.com">
+                    </div>
+
+                    <!-- WhatsApp -->
+                    <div>
+                        <label for="whatsapp" class="block text-[13px] uppercase tracking-wider mb-1.5"
+                            style="color: rgba(245, 240, 232, 0.6); letter-spacing: 1px;">WhatsApp</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" required autocomplete="tel"
+                            class="w-full rounded-lg py-3.5 px-4 text-base text-text outline-none transition-all duration-200"
+                            style="background: rgba(10, 10, 10, 0.8); border: 1px solid rgba(201, 168, 76, 0.25); font-size: 16px;"
+                            placeholder="(XX) XXXXX-XXXX">
+                    </div>
+
+                    <!-- Submit -->
+                    <button type="submit" id="submit-btn"
+                        class="w-full bg-gold hover:bg-gold-dark text-bg font-bold py-4 rounded-lg text-base uppercase tracking-wide transition-all duration-300 pulse-cta"
+                        style="min-height: 56px;">
+                        GARANTIR MINHA VAGA NO LOTE PROMOCIONAL — R$ 47
+                    </button>
+
+                    <!-- Security & Disclaimer -->
+                    <div class="text-center space-y-2 pt-2">
+                        <div class="flex items-center justify-center gap-1.5 text-xs"
+                            style="color: rgba(245, 240, 232, 0.4);">
+                            <span class="material-icons text-[13px]">lock</span> Seus dados estão seguros
+                        </div>
+                        <p class="text-[11px]" style="color: rgba(245, 240, 232, 0.3);">
+                            Ao clicar, você será redirecionado para o checkout seguro da Kiwify.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- SEÇÃO 12 — FOOTER MÍNIMO                      -->
+    <!-- ============================================= -->
+    <footer class="py-10 px-6 text-center" style="background: #050505;">
+        <p class="text-xs mb-4" style="color: rgba(245, 240, 232, 0.3);">
+            Evento IE Empresarial Petrolina &bull; 17/03/2026
+        </p>
+        <div class="flex justify-center gap-4 text-[11px] mb-4">
+            <a href="#" class="hover:opacity-100 transition-opacity" style="color: rgba(201, 168, 76, 0.5);">Termos</a>
+            <span style="color: rgba(245, 240, 232, 0.15);">|</span>
+            <a href="#" class="hover:opacity-100 transition-opacity"
+                style="color: rgba(201, 168, 76, 0.5);">Privacidade</a>
+        </div>
+        <p class="text-[11px]" style="color: rgba(245, 240, 232, 0.2);">
+            © 2026 Valter Moraes
+        </p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

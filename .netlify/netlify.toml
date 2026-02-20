@@ -1,0 +1,43 @@
+functionsDirectory = "C:\\Projetos\\valter-ieempresarial-petrolina\\netlify\\functions"
+functionsDirectoryOrigin = "config"
+redirectsOrigin = "config"
+plugins = []
+headers = []
+
+[build]
+publish = "C:\\Projetos\\valter-ieempresarial-petrolina"
+publishOrigin = "config"
+commandOrigin = "config"
+command = "echo 'Static site - no build required'"
+functions = "C:\\Projetos\\valter-ieempresarial-petrolina\\netlify\\functions"
+
+[build.environment]
+NODE_VERSION = "18"
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
+
+[functions]
+
+[functions."*"]
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
