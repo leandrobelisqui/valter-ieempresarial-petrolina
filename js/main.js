@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ================================================
        1. FAQ ACCORDION
        ================================================ */
-    const faqButtons = document.querySelectorAll('.faq-item button');
+    const faqButtons = document.querySelectorAll('.faq-btn');
 
     faqButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Loading state
             const originalText = submitBtn.textContent;
             submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span class="material-icons animate-spin text-lg">refresh</span> Processando...';
+            submitBtn.innerHTML = '<span class="material-icons spin-icon" style="font-size:18px;vertical-align:middle">refresh</span> Processando...';
             submitBtn.style.opacity = '0.7';
 
             // Get all current URL parameters
@@ -164,69 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
         revealElements.forEach(el => el.classList.add('visible'));
     }
 
-    /* ================================================
-       7. META CAPI — PageView Server-Side (50% scroll)
-       ================================================ */
-    let pageViewFired = false;
-    
-    // Helper to get Meta cookies (fbc/fbp)
-    function getMetaCookies() {
-        const cookies = document.cookie.split(';');
-        const result = {};
-        cookies.forEach(cookie => {
-            const [name, value] = cookie.trim().split('=');
-            if (name === '_fbc') result.fbc = value;
-            if (name === '_fbp') result.fbp = value;
-        });
-        return result;
-    }
-
-    // Send event to Meta CAPI via Netlify Function
-    async function sendMetaCAPIEvent(eventName, eventData = {}) {
-        try {
-            const userData = getMetaCookies();
-            const response = await fetch('/.netlify/functions/meta-capi', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    eventName,
-                    eventData: {
-                        url: window.location.href,
-                        ...eventData,
-                    },
-                    userData,
-                }),
-            });
-            
-            if (!response.ok) {
-                console.error('Meta CAPI error:', await response.text());
-            }
-        } catch (error) {
-            console.error('Failed to send Meta CAPI event:', error);
-        }
-    }
-
-    window.addEventListener('scroll', () => {
-        if (pageViewFired) return;
-        const scrollPercent = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
-        if (scrollPercent >= 0.5) {
-            pageViewFired = true;
-            
-            // Server-side CAPI event
-            sendMetaCAPIEvent('PageView', {
-                customData: {
-                    scroll_percentage: 50,
-                    page_title: document.title,
-                },
-            });
-            
-            // Browser Pixel (backup)
-            if (typeof fbq === 'function') {
-                fbq('track', 'PageView');
-            }
-        }
-    }, { passive: true });
+    /* Meta CAPI tracking is in tracking.js */
 
 });

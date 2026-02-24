@@ -1,0 +1,173 @@
+/* ==============================================
+   PRICING / OFFER
+   ============================================== */
+.pricing-card {
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-dark));
+}
+
+.pricing-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+}
+
+.pricing-price .currency {
+    font-size: 1.5rem;
+    vertical-align: super;
+    margin-right: 0.15rem;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+.pricing-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.6rem 0;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+}
+
+.pricing-features li:last-child { border-bottom: none; }
+
+.pricing-features li .icon {
+    color: var(--gold);
+    font-size: 18px;
+    margin-top: 1px;
+    flex-shrink: 0;
+}
+
+/* ==============================================
+   GUARANTEE
+   ============================================== */
+.guarantee-card {
+    padding: 2rem;
+    border-radius: var(--radius);
+    background: var(--gold-subtle);
+    border: 1px solid var(--gold);
+    text-align: center;
+}
+
+.guarantee-shield {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+    background: rgba(201, 168, 76, 0.15);
+    border: 2px solid var(--gold);
+}
+
+.guarantee-shield .icon {
+    font-size: 28px;
+    color: var(--gold);
+}
+
+.guarantee-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.guarantee-card p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.guarantee-card p:last-child {
+    margin-bottom: 0;
+}
+
+.guarantee-bold {
+    font-weight: 700;
+    color: var(--text);
+}
+
+/* ==============================================
+   TESTIMONIALS
+   ============================================== */
+.testimonial-card {
+    padding: 2rem;
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    position: relative;
+}
+
+.testimonial-card::before {
+    content: '\201C';
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--gold);
+    opacity: 0.3;
+    position: absolute;
+    top: 0.5rem;
+    left: 1.25rem;
+    line-height: 1;
+}
+
+.testimonial-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(237, 232, 223, 0.85);
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.testimonial-author {
+    font-size: 0.8rem;
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.authority-box {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    background: var(--gold-subtle);
+    border: 1px solid var(--border-gold);
+    text-align: center;
+}
+
+.authority-box p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+.authority-box strong {
+    color: var(--gold);
+}

@@ -1,0 +1,129 @@
+/* ==============================================
+   FORM
+   ============================================== */
+.form-card {
+    padding: 2rem;
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
+}
+
+.form-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    color: var(--text);
+    background: rgba(11, 11, 15, 0.8);
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    outline: none;
+    transition: border-color 0.25s ease;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.form-input:focus {
+    border-color: var(--gold);
+}
+
+.form-input::placeholder {
+    color: var(--text-dim);
+}
+
+.form-group { margin-bottom: 1.15rem; }
+
+/* ==============================================
+   FOOTER
+   ============================================== */
+.site-footer {
+    padding: 2.5rem 1.25rem;
+    text-align: center;
+    background: var(--bg-deep);
+    border-top: 1px solid var(--border);
+}
+
+.site-footer p {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    margin-bottom: 0.5rem;
+}
+
+.site-footer a {
+    color: rgba(201, 168, 76, 0.5);
+    transition: color 0.2s;
+    font-size: 0.7rem;
+}
+
+.site-footer a:hover { color: var(--gold); }
+
+/* ==============================================
+   ANIMATIONS
+   ============================================== */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.anim-in {
+    animation: fadeInUp 0.7s ease-out both;
+}
+
+.anim-delay-1 { animation-delay: 0.15s; }
+.anim-delay-2 { animation-delay: 0.3s; }
+.anim-delay-3 { animation-delay: 0.45s; }
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==============================================
+   DIVIDER
+   ============================================== */
+.section-divider {
+    width: 48px;
+    height: 1px;
+    background: rgba(201, 168, 76, 0.35);
+    margin: 0 auto;
+}
+
+/* ==============================================
+   SECURITY LINE
+   ============================================== */
+.security-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    margin-top: 1rem;
+}
+
+.security-line .icon { font-size: 13px; }
+
+/* Spinner for form submit */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.spin-icon {
+    animation: spin 1s linear infinite;
+    display: inline-block;
+}

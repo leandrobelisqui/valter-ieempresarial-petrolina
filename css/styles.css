@@ -1,0 +1,101 @@
+/* ==============================================
+   CORE VARIABLES & RESET
+   ============================================== */
+:root {
+    --bg: #0B0B0F;
+    --bg-deep: #06060A;
+    --bg-card: rgba(255, 255, 255, 0.03);
+    --bg-card-hover: rgba(255, 255, 255, 0.06);
+    --text: #EDE8DF;
+    --text-muted: rgba(237, 232, 223, 0.6);
+    --text-dim: rgba(237, 232, 223, 0.4);
+    --gold: #C9A84C;
+    --gold-light: #E0C76A;
+    --gold-dark: #A68735;
+    --gold-glow: rgba(201, 168, 76, 0.25);
+    --gold-subtle: rgba(201, 168, 76, 0.08);
+    --red-subtle: rgba(180, 60, 60, 0.15);
+    --red-border: rgba(180, 60, 60, 0.35);
+    --red-text: #D4A0A0;
+    --border: rgba(237, 232, 223, 0.08);
+    --border-gold: rgba(201, 168, 76, 0.2);
+    --radius: 12px;
+    --radius-sm: 8px;
+    --max-w: 760px;
+    --max-w-narrow: 520px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
+
+/* ==============================================
+   TYPOGRAPHY
+   ============================================== */
+.font-display {
+    font-family: 'Playfair Display', serif;
+}
+
+.section-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.75rem, 5vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: #fff;
+    margin-bottom: 1.25rem;
+}
+
+.section-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    max-width: 600px;
+}
+
+/* ==============================================
+   LAYOUT
+   ============================================== */
+.container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+.container-narrow {
+    max-width: var(--max-w-narrow);
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+.section-pad {
+    padding: 5rem 0;
+}
+
+@media (max-width: 640px) {
+    .section-pad { padding: 3.5rem 0; }
+}
+
+/* Hero, CTA, and scroll indicator styles are in hero.css */
