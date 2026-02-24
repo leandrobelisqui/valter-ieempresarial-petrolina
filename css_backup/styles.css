@@ -1,0 +1,118 @@
+/* ==============================================
+   CORE VARIABLES & RESET
+   ============================================== */
+:root {
+    --bg: #08080A;
+    --bg-deep: #030304;
+    --bg-card: rgba(255, 255, 255, 0.025);
+    --bg-card-hover: rgba(255, 255, 255, 0.05);
+    --text: #F5F2ED;
+    --text-muted: rgba(245, 242, 237, 0.55);
+    --text-dim: rgba(245, 242, 237, 0.35);
+    --gold: #D4AF37;
+    --gold-light: #E8C962;
+    --gold-dark: #B8962E;
+    --gold-glow: rgba(212, 175, 55, 0.3);
+    --gold-subtle: rgba(212, 175, 55, 0.06);
+    --gold-border: rgba(212, 175, 55, 0.15);
+    --red-subtle: rgba(180, 60, 60, 0.12);
+    --red-border: rgba(180, 60, 60, 0.3);
+    --red-text: #D4A0A0;
+    --border: rgba(245, 242, 237, 0.06);
+    --border-gold: rgba(212, 175, 55, 0.2);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --max-w: 780px;
+    --max-w-narrow: 540px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
+
+/* ==============================================
+   TYPOGRAPHY
+   ============================================== */
+.font-display {
+    font-family: 'Playfair Display', serif;
+}
+
+.section-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.section-label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+}
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5.5vw, 3.25rem);
+    font-weight: 600;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+    max-width: 620px;
+}
+
+/* ==============================================
+   LAYOUT
+   ============================================== */
+.container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+.container-narrow {
+    max-width: var(--max-w-narrow);
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+.section-pad {
+    padding: 6rem 0;
+}
+
+@media (max-width: 640px) {
+    .section-pad { padding: 4rem 0; }
+}
+
+/* Hero, CTA, and scroll indicator styles are in hero.css */

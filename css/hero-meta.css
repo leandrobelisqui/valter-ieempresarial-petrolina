@@ -1,0 +1,102 @@
+/* ==============================================
+   HERO META & CREDIBILITY — MOBILE-FIRST
+   ============================================== */
+
+/* === HERO META — TOUCH-FRIENDLY === */
+.hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: var(--space-sm);
+}
+
+@media (min-width: 480px) {
+    .hero-meta {
+        gap: 0;
+        margin-bottom: var(--space-md);
+    }
+}
+
+.hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 10px;
+    font-family: var(--font-body);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text);
+    border: 2px solid var(--border);
+    min-height: 36px;
+    transition: border-color var(--duration-fast) var(--ease-out),
+                background var(--duration-fast) var(--ease-out);
+}
+
+@media (min-width: 375px) {
+    .hero-meta-item {
+        font-size: 0.6875rem;
+        padding: 10px 12px;
+        min-height: 40px;
+    }
+}
+
+@media (min-width: 480px) {
+    .hero-meta-item {
+        border-right: none;
+        padding: var(--space-xs) var(--space-sm);
+        font-size: var(--text-xs);
+        letter-spacing: 0.1em;
+        min-height: var(--touch-min);
+    }
+    
+    .hero-meta-item:last-child {
+        border-right: 2px solid var(--border);
+    }
+}
+
+.hero-meta-item:hover {
+    background: var(--accent-muted);
+    border-color: var(--accent);
+}
+
+.hero-meta-item .material-icons {
+    font-size: 16px;
+    color: var(--accent);
+}
+
+/* === HERO CREDIBILITY === */
+.hero-credibility {
+    display: none;
+    flex-direction: column;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-md);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+@media (min-width: 480px) {
+    .hero-credibility {
+        display: flex;
+        margin-bottom: var(--space-lg);
+    }
+}
+
+@media (min-width: 900px) {
+    .hero-credibility {
+        margin-bottom: var(--space-xl);
+    }
+}
+
+.hero-credibility span {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    min-height: var(--touch-min);
+}
+
+.hero-credibility .material-icons {
+    font-size: 18px;
+    color: var(--accent);
+}

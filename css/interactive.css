@@ -1,97 +1,130 @@
 /* ==============================================
-   FUTURE VISION SECTION
+   INTERACTIVE — MOBILE-FIRST
    ============================================== */
+
+/* === FUTURE VISION === */
 .future-section {
-    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 50%, var(--bg) 100%);
+    background: var(--bg);
+    border-top: 2px solid var(--border);
+}
+
+.future-section .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2px;
+    background: var(--border);
+}
+
+@media (min-width: 768px) {
+    .future-section .container {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .future-positive {
-    padding: 2rem;
-    border-radius: var(--radius);
-    background: rgba(201, 168, 76, 0.04);
-    border: 1px solid var(--border-gold);
-    margin-bottom: 2.5rem;
+    padding: var(--space-lg);
+    background: var(--bg);
+    border-left: 4px solid var(--accent);
 }
 
 .future-negative {
-    padding: 2rem;
-    border-radius: var(--radius);
-    background: var(--red-subtle);
-    border: 1px solid var(--red-border);
+    padding: var(--space-lg);
+    background: var(--bg-alt);
+    border-left: 4px solid var(--text-muted);
+}
+
+@media (min-width: 768px) {
+    .future-positive,
+    .future-negative {
+        padding: var(--space-xl);
+    }
 }
 
 .future-text {
-    font-size: 1.02rem;
-    line-height: 1.8;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    line-height: 1.7;
     color: var(--text-muted);
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-md);
 }
 
 .future-text:last-child { margin-bottom: 0; }
 
 .future-text strong {
     color: var(--text);
+    font-weight: 600;
 }
 
-/* ==============================================
-   OBJECTIONS (SECTION 12)
-   ============================================== */
+.future-negative .future-text strong {
+    color: var(--accent);
+}
+
+/* === OBJECTIONS === */
 .objection-item {
-    padding: 1.5rem;
-    border-radius: var(--radius);
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    margin-bottom: 1rem;
-    transition: all 0.3s ease;
+    padding: var(--space-md) 0;
+    border-bottom: 2px solid var(--border);
+    position: relative;
 }
 
-.objection-item:hover {
-    background: var(--bg-card-hover);
-    border-color: var(--border-gold);
+.objection-item:first-child {
+    border-top: 2px solid var(--border);
 }
-
-.objection-item:last-child { margin-bottom: 0; }
 
 .objection-q {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 0.75rem;
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: var(--space-xs);
     display: flex;
     align-items: flex-start;
-    gap: 0.6rem;
+    gap: var(--space-xs);
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
 }
 
-.objection-q .icon {
-    color: var(--gold);
+@media (min-width: 768px) {
+    .objection-q {
+        font-size: var(--text-xl);
+        margin-bottom: var(--space-sm);
+        gap: var(--space-sm);
+    }
+}
+
+.objection-q .material-icons {
+    color: var(--accent);
     font-size: 20px;
     margin-top: 2px;
     flex-shrink: 0;
 }
 
 .objection-a {
-    font-size: 0.92rem;
-    line-height: 1.75;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    line-height: 1.7;
     color: var(--text-muted);
-    padding-left: 1.85rem;
+    padding-left: var(--space-lg);
 }
 
 .objection-a strong {
-    color: var(--text);
+    color: var(--accent);
     font-weight: 600;
 }
 
-/* ==============================================
-   FAQ ACCORDION
-   ============================================== */
+/* === FAQ ACCORDION — TOUCH-FRIENDLY === */
 .faq-item {
-    border-bottom: 1px solid var(--border);
+    border-bottom: 2px solid var(--border);
+    position: relative;
+}
+
+.faq-item.active {
+    background: var(--bg-alt);
 }
 
 .faq-btn {
     width: 100%;
-    padding: 1.15rem 0;
+    padding: var(--space-md) 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -100,36 +133,50 @@
     border: none;
     cursor: pointer;
     color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    transition: color 0.2s;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: 500;
+    min-height: var(--touch-min);
+    transition: color var(--duration-fast) var(--ease-out);
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.faq-btn:hover { color: var(--gold); }
+.faq-btn:hover { color: var(--accent); }
 
-.faq-btn .icon {
-    color: var(--gold);
-    font-size: 22px;
-    transition: transform 0.3s ease;
+.faq-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.faq-btn .material-icons {
+    color: var(--accent);
+    font-size: 24px;
+    transition: transform var(--duration-fast) var(--ease-out);
     flex-shrink: 0;
-    margin-left: 0.5rem;
+    margin-left: var(--space-sm);
+}
+
+.faq-item.active .faq-btn .material-icons {
+    transform: rotate(180deg);
 }
 
 .faq-answer {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.4s ease, opacity 0.3s ease;
+    transition: max-height var(--duration-normal) var(--ease-out),
+                opacity var(--duration-fast) var(--ease-out);
 }
 
-.faq-answer.open { opacity: 1; }
+.faq-answer.open { 
+    opacity: 1; 
+}
 
 .faq-answer-inner {
-    padding-bottom: 1.15rem;
-    font-size: 0.9rem;
+    padding-bottom: var(--space-md);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
     line-height: 1.7;
     color: var(--text-muted);
 }
-
-/* Form, footer, animations, divider, and security-line styles are in form-footer.css */

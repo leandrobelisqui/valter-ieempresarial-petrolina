@@ -1,0 +1,136 @@
+/* ==============================================
+   FUTURE VISION SECTION
+   ============================================== */
+.future-section {
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 50%, var(--bg) 100%);
+}
+
+.future-positive {
+    padding: 2.25rem;
+    border-radius: var(--radius);
+    background: rgba(212, 175, 55, 0.03);
+    border: 1px solid var(--border-gold);
+    margin-bottom: 2.5rem;
+}
+
+.future-negative {
+    padding: 2.25rem;
+    border-radius: var(--radius);
+    background: var(--red-subtle);
+    border: 1px solid var(--red-border);
+}
+
+.future-text {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--text-muted);
+    margin-bottom: 1.1rem;
+}
+
+.future-text:last-child { margin-bottom: 0; }
+
+.future-text strong {
+    color: var(--text);
+}
+
+/* ==============================================
+   OBJECTIONS (SECTION 12)
+   ============================================== */
+.objection-item {
+    padding: 1.75rem;
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    margin-bottom: 1rem;
+    transition: all 0.35s ease;
+}
+
+.objection-item:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-gold);
+}
+
+.objection-item:last-child { margin-bottom: 0; }
+
+.objection-q {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.85rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    line-height: 1.4;
+}
+
+.objection-q .icon {
+    color: var(--gold);
+    font-size: 21px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.objection-a {
+    font-size: 0.94rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+    padding-left: 2rem;
+}
+
+.objection-a strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+/* ==============================================
+   FAQ ACCORDION
+   ============================================== */
+.faq-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.faq-btn {
+    width: 100%;
+    padding: 1.25rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.98rem;
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+.faq-btn:hover { color: var(--gold); }
+
+.faq-btn .icon {
+    color: var(--gold);
+    font-size: 24px;
+    transition: transform 0.35s ease;
+    flex-shrink: 0;
+    margin-left: 0.75rem;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.faq-answer.open { opacity: 1; }
+
+.faq-answer-inner {
+    padding-bottom: 1.25rem;
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+}
+
+/* Form, footer, animations, divider, and security-line styles are in form-footer.css */

@@ -1,136 +1,155 @@
 /* ==============================================
-   ORIGIN STORY
+   COMPONENTS — BRUTALIST NARRATIVE
    ============================================== */
+
+/* === ORIGIN STORY === */
 .origin-section {
-    background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 100%);
+    background: var(--bg);
+    border-top: 2px solid var(--border);
 }
 
 .origin-text {
-    font-size: 1.05rem;
-    line-height: 1.85;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    line-height: 1.8;
     color: var(--text-muted);
-    margin-bottom: 1.25rem;
+    margin-bottom: var(--space-md);
 }
 
-.origin-text strong, .origin-text b {
+.origin-text:first-of-type {
+    font-size: 1.125rem;
+    color: var(--text);
+}
+
+.origin-text strong {
     color: var(--text);
     font-weight: 600;
 }
 
 .origin-highlight {
-    padding: 1.5rem;
-    border-radius: var(--radius);
-    background: var(--gold-subtle);
-    border-left: 3px solid var(--gold);
-    margin: 2rem 0;
+    background: var(--accent-muted);
+    border-left: 4px solid var(--accent);
+    padding: var(--space-lg);
+    margin: var(--space-xl) 0;
 }
 
 .origin-highlight p {
-    font-size: 0.95rem;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
     line-height: 1.7;
-    color: var(--text-muted);
+    color: var(--text);
 }
 
+.origin-highlight strong {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* === ORIGIN STATS === */
 .origin-stats {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: var(--border);
+    margin: var(--space-xl) 0;
+}
+
+@media (max-width: 600px) {
+    .origin-stats {
+        grid-template-columns: 1fr;
+    }
 }
 
 .origin-stat {
+    padding: var(--space-lg);
+    background: var(--bg);
     display: flex;
     align-items: flex-start;
-    gap: 0.75rem;
-    padding: 1rem 1.25rem;
-    border-radius: var(--radius-sm);
-    background: var(--bg-card);
-    border: 1px solid var(--border);
+    gap: var(--space-md);
 }
 
-.origin-stat .icon {
-    color: var(--gold);
-    font-size: 20px;
-    margin-top: 2px;
+.origin-stat .material-icons {
+    font-size: 24px;
+    color: var(--accent);
     flex-shrink: 0;
 }
 
 .origin-stat p {
-    font-size: 0.92rem;
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
     line-height: 1.6;
     color: var(--text-muted);
 }
 
-/* ==============================================
-   STEPS / PRODUCT DETAIL
-   ============================================== */
-.steps-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    counter-reset: step;
+.origin-stat strong {
+    color: var(--text);
+    font-weight: 600;
 }
 
-@media (min-width: 768px) {
-    .steps-grid { grid-template-columns: repeat(3, 1fr); }
+/* === STEPS GRID === */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border);
+}
+
+@media (max-width: 900px) {
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .step-card {
-    padding: 2rem 1.5rem;
-    border-radius: var(--radius);
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    text-align: center;
-    position: relative;
-    counter-increment: step;
-    transition: all 0.3s ease;
+    padding: var(--space-xl);
+    background: var(--bg);
+    border-left: 4px solid var(--accent);
+    transition: background var(--duration-fast) var(--ease-out);
 }
 
 .step-card:hover {
-    background: var(--bg-card-hover);
-    border-color: var(--border-gold);
-    transform: translateY(-2px);
+    background: var(--bg-alt);
 }
 
 .step-number {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--gold);
-    opacity: 0.3;
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--accent);
     line-height: 1;
-    margin-bottom: 0.75rem;
+    margin-bottom: var(--space-sm);
+    letter-spacing: 0.02em;
 }
 
 .step-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1rem;
-    background: var(--gold-subtle);
-    border: 1px solid rgba(201, 168, 76, 0.2);
+    border: 2px solid var(--accent);
+    background: var(--accent-muted);
+    margin-bottom: var(--space-md);
 }
 
-.step-icon .icon {
-    font-size: 22px;
-    color: var(--gold);
+.step-icon .material-icons {
+    font-size: 18px;
+    color: var(--accent);
 }
 
 .step-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 0.75rem;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: var(--space-sm);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
 }
 
 .step-card p {
-    font-size: 0.88rem;
-    line-height: 1.65;
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    line-height: 1.6;
     color: var(--text-muted);
 }
-
-/* Pricing and guarantee styles are in pricing.css */

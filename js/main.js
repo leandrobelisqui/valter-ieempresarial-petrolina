@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             const answer = button.nextElementSibling;
             const icon = button.querySelector('.material-icons');
+            const faqItem = button.parentElement;
             const isOpen = answer.classList.contains('open');
 
             // Close all
@@ -16,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.classList.remove('open');
                 item.style.maxHeight = null;
                 const btn = item.previousElementSibling;
+                const parent = btn.parentElement;
+                if (parent) parent.classList.remove('active');
                 btn.querySelector('.material-icons').style.transform = 'rotate(0deg)';
                 btn.setAttribute('aria-expanded', 'false');
             });
@@ -26,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 answer.style.maxHeight = answer.scrollHeight + 'px';
                 icon.style.transform = 'rotate(180deg)';
                 button.setAttribute('aria-expanded', 'true');
+                if (faqItem) faqItem.classList.add('active');
             }
         });
     });

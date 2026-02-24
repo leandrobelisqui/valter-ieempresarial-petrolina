@@ -1,0 +1,143 @@
+/* ==============================================
+   ORIGIN STORY
+   ============================================== */
+.origin-section {
+    background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 100%);
+}
+
+.origin-text {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.origin-text strong, .origin-text b {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.origin-highlight {
+    padding: 1.75rem;
+    border-radius: var(--radius);
+    background: var(--gold-subtle);
+    border-left: 3px solid var(--gold);
+    margin: 2.5rem 0;
+}
+
+.origin-highlight p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+}
+
+.origin-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2.5rem 0;
+}
+
+.origin-stat {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--radius-sm);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    transition: all 0.35s ease;
+}
+
+.origin-stat:hover {
+    border-color: var(--border-gold);
+    background: var(--bg-card-hover);
+}
+
+.origin-stat .icon {
+    color: var(--gold);
+    font-size: 22px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.origin-stat p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+}
+
+/* ==============================================
+   STEPS / PRODUCT DETAIL
+   ============================================== */
+.steps-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    counter-reset: step;
+}
+
+@media (min-width: 768px) {
+    .steps-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.step-card {
+    padding: 2.25rem 1.75rem;
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    text-align: center;
+    position: relative;
+    counter-increment: step;
+    transition: all 0.35s ease;
+}
+
+.step-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-gold);
+    transform: translateY(-4px);
+}
+
+.step-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--gold);
+    opacity: 0.2;
+    line-height: 1;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.step-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+    background: var(--gold-subtle);
+    border: 1px solid var(--gold-border);
+}
+
+.step-icon .icon {
+    font-size: 24px;
+    color: var(--gold);
+}
+
+.step-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.85rem;
+}
+
+.step-card p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+/* Pricing and guarantee styles are in pricing.css */

@@ -1,14 +1,14 @@
 /* ==============================================
-   PRICING / OFFER
+   PRICING & TESTIMONIALS — BRUTALIST
    ============================================== */
+
+/* === PRICING CARD === */
 .pricing-card {
-    padding: 2.5rem 2rem;
-    border-radius: var(--radius);
-    background: var(--bg-card);
-    border: 1px solid var(--border-gold);
+    background: var(--bg-alt);
+    border: 2px solid var(--border);
+    padding: var(--space-xl);
     text-align: center;
     position: relative;
-    overflow: hidden;
 }
 
 .pricing-card::before {
@@ -16,158 +16,166 @@
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-dark));
+    width: 100%;
+    height: 4px;
+    background: var(--accent);
 }
 
 .pricing-price {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: var(--gold);
+    font-family: var(--font-display);
+    font-size: 4rem;
+    font-weight: 400;
+    color: var(--text);
     line-height: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--space-xs);
+    letter-spacing: 0.02em;
 }
 
 .pricing-price .currency {
-    font-size: 1.5rem;
-    vertical-align: super;
-    margin-right: 0.15rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 0.5em;
+    color: var(--accent);
+    font-family: var(--font-body);
 }
 
 .pricing-features {
     list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
     text-align: left;
+    margin: var(--space-xl) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
 }
 
 .pricing-features li {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: var(--text-muted);
     display: flex;
     align-items: flex-start;
-    gap: 0.6rem;
-    padding: 0.6rem 0;
-    font-size: 0.9rem;
-    line-height: 1.55;
-    color: var(--text-muted);
-    border-bottom: 1px solid var(--border);
+    gap: var(--space-sm);
 }
 
-.pricing-features li:last-child { border-bottom: none; }
-
-.pricing-features li .icon {
-    color: var(--gold);
-    font-size: 18px;
-    margin-top: 1px;
+.pricing-features .material-icons {
+    font-size: 16px;
+    color: var(--accent);
     flex-shrink: 0;
+    margin-top: 0.1em;
 }
 
-/* ==============================================
-   GUARANTEE
-   ============================================== */
+/* === GUARANTEE CARD === */
 .guarantee-card {
-    padding: 2rem;
-    border-radius: var(--radius);
-    background: var(--gold-subtle);
-    border: 1px solid var(--gold);
+    background: var(--bg);
+    border: 2px solid var(--accent);
+    padding: var(--space-xl);
     text-align: center;
 }
 
 .guarantee-shield {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1.25rem;
-    background: rgba(201, 168, 76, 0.15);
-    border: 2px solid var(--gold);
+    margin: 0 auto var(--space-md);
+    border: 2px solid var(--accent);
+    background: var(--accent-muted);
 }
 
-.guarantee-shield .icon {
-    font-size: 28px;
-    color: var(--gold);
+.guarantee-shield .material-icons {
+    font-size: 24px;
+    color: var(--accent);
 }
 
 .guarantee-card h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--gold);
-    margin-bottom: 1rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: var(--space-md);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
 }
 
 .guarantee-card p {
-    font-size: 0.92rem;
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
     line-height: 1.7;
     color: var(--text-muted);
-    margin-bottom: 0.75rem;
-}
-
-.guarantee-card p:last-child {
-    margin-bottom: 0;
+    margin-bottom: var(--space-sm);
 }
 
 .guarantee-bold {
-    font-weight: 700;
-    color: var(--text);
+    font-weight: 600 !important;
+    color: var(--accent) !important;
+    font-size: 0.875rem !important;
+    font-family: var(--font-body) !important;
+    font-style: normal !important;
+    display: block;
+    margin-top: var(--space-lg);
 }
 
-/* ==============================================
-   TESTIMONIALS
-   ============================================== */
+/* === TESTIMONIAL CARDS === */
 .testimonial-card {
-    padding: 2rem;
-    border-radius: var(--radius);
-    background: var(--bg-card);
-    border: 1px solid var(--border);
+    background: var(--bg-alt);
+    border: 2px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: var(--space-lg);
     position: relative;
 }
 
 .testimonial-card::before {
-    content: '\201C';
-    font-family: 'Playfair Display', serif;
-    font-size: 4rem;
-    color: var(--gold);
-    opacity: 0.3;
+    content: '"';
     position: absolute;
-    top: 0.5rem;
-    left: 1.25rem;
+    top: var(--space-sm);
+    left: var(--space-md);
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: var(--accent);
     line-height: 1;
+    opacity: 0.3;
 }
 
 .testimonial-text {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 1.05rem;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
     line-height: 1.7;
-    color: rgba(237, 232, 223, 0.85);
-    margin-bottom: 1rem;
-    padding-top: 1rem;
+    color: var(--text);
+    margin-bottom: var(--space-md);
+    position: relative;
+    z-index: 1;
 }
 
 .testimonial-author {
-    font-size: 0.8rem;
-    color: var(--gold);
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
     font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
 }
 
+/* === AUTHORITY BOX === */
 .authority-box {
-    margin-top: 2.5rem;
-    padding: 1.5rem;
-    border-radius: var(--radius);
-    background: var(--gold-subtle);
-    border: 1px solid var(--border-gold);
-    text-align: center;
+    background: var(--accent-muted);
+    border-left: 4px solid var(--accent);
+    padding: var(--space-md) var(--space-lg);
+    margin-top: var(--space-lg);
 }
 
 .authority-box p {
-    font-size: 0.95rem;
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
     line-height: 1.7;
     color: var(--text-muted);
 }
 
 .authority-box strong {
-    color: var(--gold);
+    color: var(--accent);
+    font-weight: 600;
 }

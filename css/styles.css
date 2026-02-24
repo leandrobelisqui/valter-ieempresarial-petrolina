@@ -1,101 +1,168 @@
 /* ==============================================
-   CORE VARIABLES & RESET
+   NEO-BRUTALIST EDITORIAL — BASE
+   Mobile-first approach
    ============================================== */
-:root {
-    --bg: #0B0B0F;
-    --bg-deep: #06060A;
-    --bg-card: rgba(255, 255, 255, 0.03);
-    --bg-card-hover: rgba(255, 255, 255, 0.06);
-    --text: #EDE8DF;
-    --text-muted: rgba(237, 232, 223, 0.6);
-    --text-dim: rgba(237, 232, 223, 0.4);
-    --gold: #C9A84C;
-    --gold-light: #E0C76A;
-    --gold-dark: #A68735;
-    --gold-glow: rgba(201, 168, 76, 0.25);
-    --gold-subtle: rgba(201, 168, 76, 0.08);
-    --red-subtle: rgba(180, 60, 60, 0.15);
-    --red-border: rgba(180, 60, 60, 0.35);
-    --red-text: #D4A0A0;
-    --border: rgba(237, 232, 223, 0.08);
-    --border-gold: rgba(201, 168, 76, 0.2);
-    --radius: 12px;
-    --radius-sm: 8px;
-    --max-w: 760px;
-    --max-w-narrow: 520px;
+
+*, *::before, *::after { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; }
+html { 
+    scroll-behavior: smooth;
+    font-size: 16px;
+    color-scheme: dark;
+    -webkit-text-size-adjust: 100%;
+}
 
 body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: var(--font-body);
+    font-weight: 400;
     background-color: var(--bg);
     color: var(--text);
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
     line-height: 1.6;
+    letter-spacing: -0.01em;
 }
 
-img { max-width: 100%; height: auto; display: block; }
-a { text-decoration: none; color: inherit; }
+::selection {
+    background: var(--accent);
+    color: var(--black);
+}
+
+img { 
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+a { 
+    text-decoration: none; 
+    color: inherit;
+}
 
 /* ==============================================
-   TYPOGRAPHY
+   BRUTALIST TYPOGRAPHY — MOBILE-FIRST
    ============================================== */
-.font-display {
-    font-family: 'Playfair Display', serif;
-}
-
 .section-label {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.25em;
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--accent);
     display: inline-block;
-    margin-bottom: 1rem;
+    padding: var(--space-2xs) var(--space-xs);
+    background: var(--accent-muted);
+    border-left: 3px solid var(--accent);
+    margin-bottom: var(--space-lg);
 }
 
 .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.75rem, 5vw, 2.75rem);
-    font-weight: 700;
-    line-height: 1.15;
-    color: #fff;
-    margin-bottom: 1.25rem;
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 400;
+    line-height: 0.95;
+    color: var(--text);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        font-size: var(--text-5xl);
+    }
+}
+
+@media (min-width: 1024px) {
+    .section-title {
+        font-size: var(--text-6xl);
+    }
+}
+
+.section-title .highlight {
+    color: var(--accent);
 }
 
 .section-subtitle {
-    font-size: 1.05rem;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
     line-height: 1.7;
     color: var(--text-muted);
     max-width: 600px;
 }
 
 /* ==============================================
-   LAYOUT
+   LAYOUT — MOBILE-FIRST
    ============================================== */
 .container {
     max-width: var(--max-w);
     margin: 0 auto;
-    padding: 0 1.25rem;
+    padding: 0 var(--space-md);
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 var(--space-lg);
+    }
 }
 
 .container-narrow {
     max-width: var(--max-w-narrow);
     margin: 0 auto;
-    padding: 0 1.25rem;
+    padding: 0 var(--space-md);
+}
+
+@media (min-width: 768px) {
+    .container-narrow {
+        padding: 0 var(--space-lg);
+    }
 }
 
 .section-pad {
-    padding: 5rem 0;
+    padding: var(--space-2xl) 0;
+    position: relative;
 }
 
-@media (max-width: 640px) {
-    .section-pad { padding: 3.5rem 0; }
+@media (min-width: 768px) {
+    .section-pad {
+        padding: var(--space-3xl) 0;
+    }
 }
 
-/* Hero, CTA, and scroll indicator styles are in hero.css */
+@media (min-width: 1024px) {
+    .section-pad {
+        padding: var(--space-4xl) 0;
+    }
+}
+
+/* ==============================================
+   UTILITY
+   ============================================== */
+.text-accent { color: var(--accent); }
+.text-muted { color: var(--text-muted); }
+.text-center { text-align: center; }
+
+.bg-alt { background: var(--bg-alt); }
+
+/* Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity var(--duration-slow) var(--ease-out),
+                transform var(--duration-slow) var(--ease-out);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
