@@ -1,12 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <script>
+(function () {
+  if (window.__utmScriptLoaded) return;
+  window.__utmScriptLoaded = true;
+
+  var FIELDS = ["src", "sck", "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+  var STORAGE_KEY = "__utm_params";
+
+  function parseQuery(search) {
+    var params = {};
+    try {
+      if (!search) return params;
+      if (search.charAt(0) === "?") search = search.substring(1);
+      search.split("&").forEach(function(part) {
+        if (!part) return;
+        var kv = part.split("=");
+        var k = decodeURIComponent(kv[0] || "");
+        var v = decodeURIComponent(kv.slice(1).join("=") || "");
+        if (k) params[k] = v;
+      });
+    } catch (e) {}
+    return params;
+  }
+
+  function getUtmParams() {
+    var fromUrl = parseQuery(window.location.search);
+    var relevant = {};
+    var found = false;
+
+    FIELDS.forEach(function(f) {
+      if (fromUrl[f]) {
+        relevant[f] = fromUrl[f];
+        found = true;
+      }
+    });
+
+    if (found) {
+      try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify(relevant)); } catch(e) {}
+      return relevant;
+    }
+
+    try {
+      var stored = sessionStorage.getItem(STORAGE_KEY);
+      if (stored) return JSON.parse(stored);
+    } catch(e) {}
+
+    return {};
+  }
+
+  function applyParamsToHref(href, params) {
+    try {
+      var url = new URL(href, window.location.href);
+      var changed = false;
+      FIELDS.forEach(function(f) {
+        if (params[f] && url.searchParams.get(f) !== params[f]) {
+          url.searchParams.set(f, params[f]);
+          changed = true;
+        }
+      });
+      return changed ? url.href : null;
+    } catch(e) {
+      return null;
+    }
+  }
+
+  function applyParams() {
+    var params = getUtmParams();
+    if (!Object.keys(params).length) return;
+
+    var links = document.getElementsByTagName("a");
+    for (var i = 0; i < links.length; i++) {
+      var link = links[i];
+      try {
+        var raw = link.getAttribute("href");
+        if (!raw) continue;
+        var lower = raw.toLowerCase();
+        if (raw.charAt(0) === "#" ||
+            lower.indexOf("mailto:") === 0 ||
+            lower.indexOf("tel:") === 0 ||
+            lower.indexOf("javascript:") === 0) continue;
+
+        var newHref = applyParamsToHref(link.href, params);
+        if (newHref) link.href = newHref;
+      } catch(e) {}
+    }
+  }
+
+  var interval = setInterval(applyParams, 500);
+  setTimeout(function() { clearInterval(interval); }, 30000);
+
+  if (typeof MutationObserver !== 'undefined' && document.body) {
+    try {
+      var observer = new MutationObserver(function(mutations) {
+        for (var i = 0; i < mutations.length; i++) {
+          if (mutations[i].addedNodes.length > 0) {
+            applyParams();
+            break;
+          }
+        }
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+    } catch(e) {}
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener("DOMContentLoaded", applyParams);
+  } else {
+    applyParams();
+  }
+
+})();
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encontro Empresarial Petrolina | Valter Moraes — 17/03</title>
-    <meta name="description" content="Escale sua empresa sem que sua família pague a conta. Evento presencial em Petrolina. 17 de março. R$ 47.">
-    <meta property="og:title" content="Encontro Empresarial Petrolina | Valter Moraes">
-    <meta property="og:description" content="Escale sua empresa sem que sua família pague a conta. 17/03 em Petrolina. R$ 47.">
+    <title>Encontro Empresarial Online | Valter Moraes — 16/04</title>
+    <meta name="description" content="Escale sua empresa sem que sua família pague a conta. Evento online ao vivo. 16 de abril. R$ 47.">
+    <meta property="og:title" content="Encontro Empresarial Online | Valter Moraes">
+    <meta property="og:description" content="Escale sua empresa sem que sua família pague a conta. 16/04 online ao vivo. R$ 47.">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,17 +146,17 @@
 <!-- SEÇÃO 1 — HERO -->
 <section class="hero">
     <div class="hero-bg">
-        <img src="assets/valter.JPEG" alt="Valter Moraes — Encontro Empresarial Petrolina" loading="eager">
+        <img src="assets/valter.JPEG" alt="Valter Moraes — Encontro Empresarial Online" loading="eager">
         <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
-        <div class="hero-badge anim-in">ENCONTRO EMPRESARIAL PETROLINA</div>
+        <div class="hero-badge anim-in">ENCONTRO EMPRESARIAL ONLINE</div>
         <h1 class="anim-in anim-delay-1">Escale Sua Empresa Sem Que <span class="highlight">Sua Família Pague a Conta</span></h1>
-        <p class="hero-sub anim-in anim-delay-2">Descubra em 4 horas como empresários de Petrolina estão faturando mais enquanto restauram a paz em casa. Presencial, dia 17 de março.</p>
+        <p class="hero-sub anim-in anim-delay-2">Descubra em 4 horas como empresários estão faturando mais enquanto restauram a paz em casa. Online, ao vivo, dia 16 de abril.</p>
         <div class="hero-meta anim-in anim-delay-2">
-            <div class="hero-meta-item"><span class="material-icons icon">event</span> 17/03 · Terça-feira</div>
+            <div class="hero-meta-item"><span class="material-icons icon">event</span> 16/04 · Quinta-feira</div>
             <div class="hero-meta-item"><span class="material-icons icon">schedule</span> 19h (Noite)</div>
-            <div class="hero-meta-item"><span class="material-icons icon">location_on</span> Petrolina · Presencial</div>
+            <div class="hero-meta-item"><span class="material-icons icon">location_on</span> Online · Ao Vivo</div>
         </div>
         <div class="hero-credibility anim-in anim-delay-2">
             <span><span class="material-icons icon">verified</span> Já transformou a vida de centenas de empresários</span>
@@ -223,7 +335,7 @@
     <div class="container-narrow reveal">
         <div style="text-align:center;margin-bottom:2rem">
             <span class="section-label">O Investimento</span>
-            <p class="section-subtitle" style="margin:0 auto">Apenas 47 reais para estar presente no dia 17 de março em Petrolina.</p>
+            <p class="section-subtitle" style="margin:0 auto">Apenas 47 reais para participar online ao vivo no dia 16 de abril.</p>
         </div>
         <div class="pricing-card">
             <h3 style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#fff;margin-bottom:0.5rem;font-weight:700">Ingresso: Descompressão Empresarial</h3>
@@ -231,10 +343,10 @@
                 <div class="pricing-price"><span class="currency">R$</span>47</div>
             </div>
             <ul class="pricing-features">
-                <li><span class="material-icons icon">check_circle</span> Acesso ao encontro presencial de 3 a 4 horas com Valter Moraes</li>
-                <li><span class="material-icons icon">check_circle</span> Protocolo de 5 Decisões Sob Pressão (material exclusivo entregue no evento)</li>
+                <li><span class="material-icons icon">check_circle</span> Acesso ao encontro online ao vivo de 3 a 4 horas com Valter Moraes</li>
+                <li><span class="material-icons icon">check_circle</span> Protocolo de 5 Decisões Sob Pressão (material exclusivo disponibilizado digitalmente após o evento, exclusivo para quem participar ao vivo)</li>
                 <li><span class="material-icons icon">check_circle</span> Networking qualificado com empresários que faturam 50k ou mais por mês</li>
-                <li><span class="material-icons icon">check_circle</span> Garantia de satisfação: reembolso integral nos primeiros 30 minutos se não sentir que vale a pena</li>
+                <li><span class="material-icons icon">check_circle</span> Garantia incondicional de 7 dias: reembolso integral sem perguntas</li>
             </ul>
             <a href="#inscricao" class="btn-cta pulse-cta" style="margin-top:1.5rem">SIM, EU QUERO DESTRAVAR MEU PRÓXIMO NÍVEL</a>
             <div class="security-line"><span class="material-icons icon">lock</span> Pagamento seguro via Kiwify</div>
@@ -248,7 +360,7 @@
         <div class="guarantee-card">
             <div class="guarantee-shield"><span class="material-icons icon">verified_user</span></div>
             <h3>Garantia de Clareza ou Seu Dinheiro de Volta</h3>
-            <p>Se nos primeiros 30 minutos do encontro você sentir que não está recebendo o valor prometido, basta nos avisar no local. Devolvemos 100 por cento do seu investimento na hora. Sem perguntas, sem burocracia.</p>
+            <p>Você tem 7 dias de garantia incondicional. Sem perguntas, sem burocracia. Basta entrar em contato e o reembolso é feito.</p>
             <p>Eu sei que você já tentou de tudo. Cursos, livros, consultorias. E ainda assim sente que algo te trava. Por isso assumo todo o risco. Você só precisa aparecer e dar uma chance para o método. Se não funcionar para você, o dinheiro volta para o seu bolso.</p>
             <p class="guarantee-bold">O risco é todo meu. A transformação é toda sua.</p>
         </div>
@@ -277,7 +389,7 @@
             <p class="future-text">Daqui a seis meses, você vai olhar para trás e perceber que nada mudou. Porque você não mudou.</p>
             <p class="future-text">E o pior... você vai ver outros empresários que estavam na mesma situação que você avançando. Crescendo. Prosperando. Enquanto você ficou parado.</p>
             <p class="future-text">Não porque você não é capaz. Mas porque você não agiu quando teve a chance.</p>
-            <p class="future-text"><strong>O evento é dia 17 de março. Em Petrolina.</strong></p>
+            <p class="future-text"><strong>O evento é dia 16 de abril. Online, ao vivo.</strong></p>
             <p class="future-text"><strong>A decisão é sua.</strong></p>
             <p class="future-text" style="margin-bottom:0">Mas eu te digo uma coisa: <strong>o custo de não vir é muito maior que o valor do ingresso.</strong></p>
         </div>
@@ -308,11 +420,11 @@
             </div>
             <div class="objection-item">
                 <div class="objection-q"><span class="material-icons icon">groups</span>"E se eu me expor na frente de outros empresários?"</div>
-                <p class="objection-a">Ninguém vai te julgar. Todos ali estão na mesma luta que você. Faturam bem, mas sentem a pressão. A vulnerabilidade cria conexão. E é nessa conexão que acontece a transformação. Você não está sozinho nessa.</p>
+                <p class="objection-a">Ninguém vai te julgar. Todos que participam estão na mesma luta que você. Faturam bem, mas sentem a pressão. A vulnerabilidade cria conexão. E é nessa conexão que acontece a transformação. Você não está sozinho nessa.</p>
             </div>
             <div class="objection-item">
                 <div class="objection-q"><span class="material-icons icon">paid</span>"R$ 47 parece pouco... tem pegadinha?"</div>
-                <p class="objection-a">Não tem pegadinha. O valor é baixo porque eu quero que você venha. Quero provar que isso funciona. A garantia é real: se não valer a pena, você pede o dinheiro de volta nos primeiros 30 minutos. <strong>O risco é todo meu.</strong> Você só precisa aparecer.</p>
+                <p class="objection-a">Não tem pegadinha. O valor é baixo porque eu quero que você venha. Quero provar que isso funciona. A garantia é real: você tem 7 dias de garantia incondicional para pedir o dinheiro de volta. <strong>O risco é todo meu.</strong> Você só precisa aparecer.</p>
             </div>
         </div>
         <div style="max-width:520px;margin:2rem auto 0">
@@ -333,16 +445,16 @@
                 <div class="faq-answer"><div class="faq-answer-inner">O encontro tem duração de 3 a 4 horas. É um formato concentrado para você aplicar no dia seguinte.</div></div>
             </div>
             <div class="faq-item">
-                <button class="faq-btn" aria-expanded="false"><span>O evento é mesmo em Petrolina?</span><span class="material-icons icon">expand_more</span></button>
-                <div class="faq-answer"><div class="faq-answer-inner">Sim. O encontro acontece presencialmente em Petrolina no dia 17 de março na Arca Treinamentos.</div></div>
+                <button class="faq-btn" aria-expanded="false"><span>O evento é mesmo online?</span><span class="material-icons icon">expand_more</span></button>
+                <div class="faq-answer"><div class="faq-answer-inner">Sim. O encontro acontece online ao vivo no dia 16 de abril a partir das 19h.</div></div>
             </div>
             <div class="faq-item">
                 <button class="faq-btn" aria-expanded="false"><span>Preciso levar algum material?</span><span class="material-icons icon">expand_more</span></button>
-                <div class="faq-answer"><div class="faq-answer-inner">Não. Leve apenas você, sua disposição para encarar a verdade e um caderno se quiser anotar. O resto a gente entrega.</div></div>
+                <div class="faq-answer"><div class="faq-answer-inner">Não. Tenha à mão apenas você, sua disposição para encarar a verdade e um caderno se quiser anotar. O resto a gente disponibiliza.</div></div>
             </div>
             <div class="faq-item">
                 <button class="faq-btn" aria-expanded="false"><span>A garantia funciona mesmo?</span><span class="material-icons icon">expand_more</span></button>
-                <div class="faq-answer"><div class="faq-answer-inner">Sim. Se nos primeiros 30 minutos você sentir que não é para você, basta avisar no local e devolvemos seu dinheiro. Sem perguntas.</div></div>
+                <div class="faq-answer"><div class="faq-answer-inner">Sim. São 7 dias de garantia incondicional. Basta entrar em contato e devolvemos o valor integral, sem nenhuma pergunta.</div></div>
             </div>
             <div class="faq-item">
                 <button class="faq-btn" aria-expanded="false"><span>Vou conseguir aplicar isso na minha empresa?</span><span class="material-icons icon">expand_more</span></button>
@@ -362,7 +474,7 @@
             </div>
             <div class="faq-item">
                 <button class="faq-btn" aria-expanded="false"><span>Tem networking no evento?</span><span class="material-icons icon">expand_more</span></button>
-                <div class="faq-answer"><div class="faq-answer-inner">Sim. Você vai estar com outros empresários de Petrolina que faturam no mesmo nível. As conexões acontecem naturalmente.</div></div>
+                <div class="faq-answer"><div class="faq-answer-inner">Sim. Você vai estar com outros empresários que faturam no mesmo nível. As conexões acontecem naturalmente.</div></div>
             </div>
             <div class="faq-item">
                 <button class="faq-btn" aria-expanded="false"><span>Qual o perfil dos participantes?</span><span class="material-icons icon">expand_more</span></button>
@@ -405,7 +517,7 @@
 
 <!-- FOOTER -->
 <footer class="site-footer">
-    <p>Encontro Empresarial Petrolina &bull; 17/03/2026</p>
+    <p>Encontro Empresarial Online &bull; 16/04/2026</p>
     <div style="display:flex;justify-content:center;gap:1rem;margin-bottom:0.5rem">
         <a href="#">Termos</a>
         <span style="color:var(--border)">|</span>

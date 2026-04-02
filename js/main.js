@@ -75,13 +75,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Get all current URL parameters
             const currentParams = new URLSearchParams(window.location.search);
-            
-            // Build checkout params starting with all current params
+
+            // Also recover any UTM params stored in sessionStorage by the UTM script
+            let sessionParams = {};
+            try {
+                const stored = sessionStorage.getItem('__utm_params');
+                if (stored) sessionParams = JSON.parse(stored);
+            } catch (e) {}
+
+            // Build checkout params: sessionStorage first, then URL (URL takes precedence)
             const checkoutParams = new URLSearchParams();
-            
-            // Add all existing params from current URL (UTMs, src, sck, etc.)
+            for (const [key, value] of Object.entries(sessionParams)) {
+                checkoutParams.set(key, value);
+            }
             for (const [key, value] of currentParams) {
-                checkoutParams.append(key, value);
+                checkoutParams.set(key, value);
             }
             
             // Add user data for pre-population
@@ -123,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // --- KIWIFY REDIRECT ---
-            const KIWIFY_URL = 'https://pay.kiwify.com.br/RjYXcAz';
+            const KIWIFY_URL = 'https://pay.kiwify.com.br/ceY6x54';
             const finalUrl = `${KIWIFY_URL}?${checkoutParams.toString()}`;
 
             // Pequeno delay para dar tempo do webhook e pixel dispararem
