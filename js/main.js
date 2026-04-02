@@ -1,4 +1,43 @@
+/* ================================================
+   MODAL FUNCTIONS
+   ================================================ */
+function openModal() {
+    const modal = document.getElementById('modal-inscricao');
+    if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeModal() {
+    const modal = document.getElementById('modal-inscricao');
+    if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+}
+
+// Close modal on overlay click
+document.addEventListener('click', (e) => {
+    if (e.target.id === 'modal-overlay') {
+        closeModal();
+    }
+});
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Modal close button
+    const modalClose = document.getElementById('modal-close');
+    if (modalClose) {
+        modalClose.addEventListener('click', closeModal);
+    }
 
     /* ================================================
        1. FAQ ACCORDION
@@ -131,11 +170,63 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ================================================
+       4. MODAL DE INSCRIÇÃO
+       ================================================ */
+    const modal = document.getElementById('inscricao-modal');
+    const overlay = document.getElementById('modal-overlay');
+    const closeBtn = document.getElementById('close-modal-btn');
+    const openModalBtns = document.querySelectorAll('a[href="#inscricao"]');
+
+    function openModal(e) {
+        if (e) e.preventDefault();
+        if (modal) {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+    }
+
+    function closeModal() {
+        if (modal) {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = ''; // Restore background scrolling
+        }
+    }
+
+    // Open modal on CTA click
+    openModalBtns.forEach(btn => {
+        btn.addEventListener('click', openModal);
+    });
+
+    // Close modal on close button click
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+
+    // Close modal on overlay click
+    if (overlay) {
+        overlay.addEventListener('click', closeModal);
+    }
+
+    // Close modal on Esc key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+            closeModal();
+        }
+    });
+
+    /* ================================================
        5. SMOOTH SCROLL FOR ANCHOR LINKS
        ================================================ */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href').substring(1);
+            if (targetId === 'inscricao') {
+                e.preventDefault();
+                openModal();
+                return;
+            }
             const target = document.getElementById(targetId);
             if (target) {
                 e.preventDefault();
@@ -163,70 +254,5 @@ document.addEventListener('DOMContentLoaded', () => {
         // Fallback: show all
         revealElements.forEach(el => el.classList.add('visible'));
     }
-
-    /* ================================================
-       7. META CAPI — PageView Server-Side (50% scroll)
-       ================================================ */
-    let pageViewFired = false;
-    
-    // Helper to get Meta cookies (fbc/fbp)
-    function getMetaCookies() {
-        const cookies = document.cookie.split(';');
-        const result = {};
-        cookies.forEach(cookie => {
-            const [name, value] = cookie.trim().split('=');
-            if (name === '_fbc') result.fbc = value;
-            if (name === '_fbp') result.fbp = value;
-        });
-        return result;
-    }
-
-    // Send event to Meta CAPI via Netlify Function
-    async function sendMetaCAPIEvent(eventName, eventData = {}) {
-        try {
-            const userData = getMetaCookies();
-            const response = await fetch('/.netlify/functions/meta-capi', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    eventName,
-                    eventData: {
-                        url: window.location.href,
-                        ...eventData,
-                    },
-                    userData,
-                }),
-            });
-            
-            if (!response.ok) {
-                console.error('Meta CAPI error:', await response.text());
-            }
-        } catch (error) {
-            console.error('Failed to send Meta CAPI event:', error);
-        }
-    }
-
-    window.addEventListener('scroll', () => {
-        if (pageViewFired) return;
-        const scrollPercent = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
-        if (scrollPercent >= 0.5) {
-            pageViewFired = true;
-            
-            // Server-side CAPI event
-            sendMetaCAPIEvent('PageView', {
-                customData: {
-                    scroll_percentage: 50,
-                    page_title: document.title,
-                },
-            });
-            
-            // Browser Pixel (backup)
-            if (typeof fbq === 'function') {
-                fbq('track', 'PageView');
-            }
-        }
-    }, { passive: true });
 
 });

@@ -5,21 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IE Empresarial Petrolina | Valter Moraes — 17/03</title>
-    <meta name="description"
-        content="Sua inteligência emocional é o teto do seu faturamento. Evento presencial para empresários em Petrolina. 17 de março. Apenas R$ 47.">
+    <meta name="description" content="Escale Sua Empresa Sem Que Sua Família Pague a Conta. Evento presencial para empresários em Petrolina. 17 de março, a partir das 19h. Apenas R$ 47.">
 
     <!-- OG Tags -->
     <meta property="og:title" content="IE Empresarial Petrolina | Valter Moraes">
-    <meta property="og:description"
-        content="Sua inteligência emocional é o teto do seu faturamento. 17/03 em Petrolina. R$ 47.">
+    <meta property="og:description" content="Escale Sua Empresa Sem Que Sua Família Pague a Conta. 17/03 em Petrolina, às 19h. R$ 47.">
     <meta property="og:type" content="website">
 
-    <!-- Preload Fonts -->
+    <!-- Preconnect Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Tailwind CSS CDN -->
@@ -29,24 +25,29 @@
             theme: {
                 extend: {
                     colors: {
-                        bg: '#0D0D0D',
-                        'bg-deep': '#060606',
-                        'bg-card': '#151515',
-                        text: '#E8E3D8',
-                        'text-muted': '#9A9388',
-                        amber: '#D4A574',
-                        'amber-bright': '#E8B887',
-                        'amber-dark': '#B8895E',
-                        slate: '#2A3744',
-                        'slate-light': '#3D4A58',
+                        bg: '#0A0A0A',
+                        'bg-deep': '#050505',
+                        'bg-card': '#141414',
+                        'bg-elevated': '#1A1A1A',
+                        text: '#F5F0E8',
+                        'text-muted': '#8A8578',
+                        'text-soft': '#B5B0A8',
+                        gold: '#C9A962',
+                        'gold-bright': '#E5C97C',
+                        'gold-dark': '#A68940',
+                        'gold-deep': '#7A6530',
+                        wine: '#6B2D3A',
+                        'wine-light': '#8B4D5A',
+                        cream: '#F8F4EC',
+                        charcoal: '#1E1E1E',
                     },
                     fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                        serif: ['Crimson Pro', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
                     },
                     maxWidth: {
-                        'mobile': '440px',
-                        'content': '680px',
+                        'prose': '720px',
+                        'wide': '1200px',
                     }
                 }
             }
@@ -58,20 +59,25 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Outfit', sans-serif;
-            background-color: #0D0D0D;
-            color: #E8E3D8;
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0A0A;
+            color: #F5F0E8;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             letter-spacing: -0.01em;
+            overflow-x: hidden;
         }
 
         .font-serif {
-            font-family: 'Crimson Pro', serif;
-            letter-spacing: -0.02em;
+            font-family: 'Playfair Display', serif;
         }
 
-        /* Grain texture overlay */
+        /* Elegant grain texture */
         body::before {
             content: '';
             position: fixed;
@@ -79,120 +85,49 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
             pointer-events: none;
             z-index: 9999;
-            opacity: 0.4;
         }
 
-        /* Hero overlay - dramatic gradient */
+        /* Hero gradient overlay */
         .hero-overlay {
-            background: linear-gradient(135deg, 
-                rgba(13, 13, 13, 0.95) 0%, 
-                rgba(13, 13, 13, 0.85) 30%,
-                rgba(42, 55, 68, 0.4) 70%,
-                rgba(212, 165, 116, 0.15) 100%);
+            background: linear-gradient(180deg, 
+                rgba(10, 10, 10, 0.3) 0%,
+                rgba(10, 10, 10, 0.5) 40%,
+                rgba(10, 10, 10, 0.85) 70%,
+                rgba(10, 10, 10, 0.98) 100%);
         }
 
-        /* Diagonal accent line */
-        .diagonal-accent {
-            position: relative;
-        }
-        
-        .diagonal-accent::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -20px;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, #D4A574, transparent);
-            transform: skewY(-2deg);
+        /* Gold gradient text */
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #E5C97C 0%, #C9A962 50%, #A68940 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        /* Fade-in animation */
+        /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        .animate-fade-in-up {
-            animation: fadeInUp 0.8s ease-out both;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        .animate-fade-in-up-delay {
-            animation: fadeInUp 0.8s ease-out 0.3s both;
-        }
-
-        /* Scroll indicator bounce */
-        @keyframes gentleBounce {
-
-            0%,
-            100% {
-                transform: translateY(0) translateX(-50%);
-            }
-
-            50% {
-                transform: translateY(8px) translateX(-50%);
-            }
-        }
-
-        .scroll-indicator {
-            animation: gentleBounce 2s ease-in-out infinite;
-        }
-
-        /* FAQ answer transition */
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            opacity: 0;
-            transition: max-height 0.35s ease, opacity 0.25s ease;
-        }
-
-        .faq-answer.open {
-            opacity: 1;
-        }
-
-        /* Intersection Observer fade-in */
-        .reveal {
-            opacity: 0;
-            transform: translateY(16px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Pulse subtle for CTA */
-        @keyframes subtlePulse {
-            0%, 100% {
-                box-shadow: 0 8px 32px rgba(212, 165, 116, 0.25);
-                transform: translateY(0);
-            }
-            50% {
-                box-shadow: 0 12px 48px rgba(212, 165, 116, 0.4);
-                transform: translateY(-2px);
-            }
-        }
-
-        .pulse-cta {
-            animation: subtlePulse 3s ease-in-out infinite;
-        }
-
-        /* Slide in from left */
         @keyframes slideInLeft {
             from {
                 opacity: 0;
-                transform: translateX(-40px);
+                transform: translateX(-50px);
             }
             to {
                 opacity: 1;
@@ -200,18 +135,119 @@
             }
         }
 
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(201, 169, 98, 0.4);
+            }
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 0 30px 10px rgba(201, 169, 98, 0.2);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out both;
+        }
+
         .animate-slide-left {
             animation: slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
 
-        /* Number counter animation */
-        @keyframes countUp {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .animate-pulse-cta {
+            animation: pulse 3s ease-in-out infinite;
         }
 
-        .animate-count {
-            animation: countUp 0.6s ease-out both;
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Reveal on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FAQ accordion */
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .faq-content.open {
+            opacity: 1;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0A0A0A;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #C9A962;
+            border-radius: 4px;
+        }
+
+        /* Decorative elements */
+        .gold-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #C9A962, transparent);
+        }
+
+        .gold-border {
+            border: 1px solid rgba(201, 169, 98, 0.3);
+        }
+
+        .gold-glow {
+            box-shadow: 0 0 40px rgba(201, 169, 98, 0.15);
+        }
+
+        /* Button hover effects */
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        /* Image placeholder */
+        .img-placeholder {
+            background: linear-gradient(135deg, #1A1A1A 0%, #141414 100%);
         }
     </style>
 
@@ -237,260 +273,110 @@
 <body class="antialiased">
 
     <!-- ============================================= -->
-    <!-- SEÇÃO 1 — HERO                                -->
+    <!-- SEÇÃO 1: A CHAMADA PRINCIPAL                  -->
     <!-- ============================================= -->
-    <section class="relative min-h-screen flex items-end overflow-hidden">
-        <!-- Background Image with dramatic overlay -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background -->
         <div class="absolute inset-0 z-0">
-            <img src="assets/valter.JPEG"
-                alt="Valter Moraes" class="w-full h-full object-cover object-top"
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920&q=80"
+                alt="Evento empresarial" class="w-full h-full object-cover opacity-40"
                 loading="eager">
             <div class="absolute inset-0 hero-overlay"></div>
         </div>
 
-        <!-- Content -->
-        <div class="relative z-10 w-full px-6 md:px-8 pb-16 md:pb-20 pt-32">
-            <div class="max-w-content mx-auto">
-                <!-- Overline -->
-                <div class="mb-6 animate-fade-in-up">
-                    <div class="inline-block px-4 py-2 border-l-4 border-amber bg-bg-card/40 backdrop-blur-sm">
-                        <p class="text-xs font-bold tracking-[0.25em] uppercase text-amber-bright">
-                            IE EMPRESARIAL PETROLINA
-                        </p>
-                    </div>
-                </div>
+        <!-- Decorative gold corners -->
+        <div class="absolute top-8 left-8 w-24 h-24 border-l-2 border-t-2 border-gold/30 z-20 hidden md:block"></div>
+        <div class="absolute top-8 right-8 w-24 h-24 border-r-2 border-t-2 border-gold/30 z-20 hidden md:block"></div>
+        <div class="absolute bottom-8 left-8 w-24 h-24 border-l-2 border-b-2 border-gold/30 z-20 hidden md:block"></div>
+        <div class="absolute bottom-8 right-8 w-24 h-24 border-r-2 border-b-2 border-gold/30 z-20 hidden md:block"></div>
 
-                <!-- Main Headline - Brutalist Typography -->
-                <h1 class="font-serif font-black text-[32px] md:text-[56px] lg:text-[72px] leading-[0.95] mb-8 text-white animate-slide-left diagonal-accent"
-                    style="text-shadow: 0 4px 24px rgba(0,0,0,0.8); max-width: 680px;">
-                    Sua inteligência<br>
-                    emocional é o teto<br>
-                    do seu <span class="text-amber-bright italic">faturamento</span>
+        <!-- Credibility badges -->
+        <div class="absolute top-6 right-6 z-20 hidden lg:flex flex-col gap-3 animate-fade-in" style="animation-delay: 0.5s;">
+            <div class="bg-bg-card/90 backdrop-blur-sm border border-gold/30 px-5 py-2.5">
+                <p class="text-[11px] uppercase tracking-widest text-gold-bright font-semibold">Já transformou centenas de empresários</p>
+            </div>
+            <div class="bg-bg-card/90 backdrop-blur-sm border border-gold/30 px-5 py-2.5">
+                <p class="text-[11px] uppercase tracking-widest text-gold-bright font-semibold">Método validado • 6 e 7 dígitos</p>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 w-full px-6 md:px-12 lg:px-20 py-24 md:py-32">
+            <div class="max-w-5xl mx-auto text-center">
+                
+                <!-- Main Headline -->
+                <h1 class="font-serif font-black text-[32px] md:text-[56px] lg:text-[72px] leading-[1.05] mb-8 text-white animate-slide-left"
+                    style="text-shadow: 0 4px 40px rgba(0,0,0,0.8);">
+                    Escale Sua Empresa<br>
+                    <span class="text-gradient-gold italic">Sem Que Sua Família</span><br>
+                    Pague a Conta
                 </h1>
 
                 <!-- Sub-headline -->
-                <p class="text-text/80 font-sans text-base md:text-lg leading-relaxed mb-10 animate-fade-in-up max-w-md font-light"
+                <p class="text-text/90 text-lg md:text-xl lg:text-2xl leading-relaxed mb-10 animate-fade-in-up max-w-3xl mx-auto font-light"
                     style="animation-delay: 0.2s;">
-                    Mentoria coletiva presencial com Valter Moraes.<br>
-                    Para empresários que querem crescer sem perder<br class="hidden md:block"> a paz e a família.
+                    Descubra em 4 horas como empresários de Petrolina estão faturando mais enquanto restauram a paz em casa. <span class="text-gold font-medium">Presencial, dia 17 de março.</span>
                 </p>
 
-                <!-- Event Details Grid -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10 max-w-lg animate-fade-in-up" style="animation-delay: 0.3s;">
-                    <div class="bg-bg-card/60 backdrop-blur-sm border border-amber/20 px-4 py-3">
-                        <p class="text-[10px] uppercase tracking-wider text-text-muted mb-1">Data</p>
-                        <p class="text-sm font-bold text-amber">17/03</p>
+                <!-- Event Details -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="bg-bg-card/80 backdrop-blur-sm border border-gold/30 px-6 py-3 flex items-center gap-3">
+                        <span class="material-icons text-gold text-xl">event</span>
+                        <span class="text-sm font-semibold text-text">17 de Março</span>
                     </div>
-                    <div class="bg-bg-card/60 backdrop-blur-sm border border-amber/20 px-4 py-3">
-                        <p class="text-[10px] uppercase tracking-wider text-text-muted mb-1">Horário</p>
-                        <p class="text-sm font-bold text-amber">19h</p>
+                    <div class="bg-bg-card/80 backdrop-blur-sm border border-gold/30 px-6 py-3 flex items-center gap-3">
+                        <span class="material-icons text-gold text-xl">schedule</span>
+                        <span class="text-sm font-semibold text-text">A partir das 19h</span>
                     </div>
-                    <div class="bg-bg-card/60 backdrop-blur-sm border border-amber/20 px-4 py-3">
-                        <p class="text-[10px] uppercase tracking-wider text-text-muted mb-1">Local</p>
-                        <p class="text-sm font-bold text-amber">Petrolina</p>
-                    </div>
-                    <div class="bg-amber/10 backdrop-blur-sm border-2 border-amber px-4 py-3">
-                        <p class="text-[10px] uppercase tracking-wider text-amber-dark mb-1">Ingresso</p>
-                        <p class="text-sm font-black text-amber-bright">R$ 47</p>
+                    <div class="bg-bg-card/80 backdrop-blur-sm border border-gold/30 px-6 py-3 flex items-center gap-3">
+                        <span class="material-icons text-gold text-xl">location_on</span>
+                        <span class="text-sm font-semibold text-text">Petrolina</span>
                     </div>
                 </div>
 
-                <!-- CTA -->
+                <!-- CTA Button -->
                 <a href="#inscricao"
-                    class="inline-block bg-amber hover:bg-amber-bright text-bg font-black text-sm md:text-base px-10 py-5 uppercase tracking-wider transition-all duration-300 animate-fade-in-up"
-                    style="animation-delay: 0.4s; box-shadow: 0 8px 32px rgba(212, 165, 116, 0.3);">
+                    class="inline-block bg-gold hover:bg-gold-bright text-bg font-bold text-base md:text-lg px-12 py-5 uppercase tracking-wider transition-all duration-300 animate-fade-in-up animate-pulse-cta btn-primary"
+                    style="animation-delay: 0.6s;">
                     Garantir Minha Vaga
                 </a>
             </div>
         </div>
 
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-6 left-1/2 scroll-indicator opacity-40 z-10">
-            <span class="material-icons text-amber text-2xl">expand_more</span>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-float">
+            <span class="material-icons text-gold/50 text-3xl">expand_more</span>
         </div>
     </section>
 
 
     <!-- ============================================= -->
-    <!-- SEÇÃO 2 — TEXTO DE APOIO                      -->
+    <!-- SEÇÃO 2: O PROBLEMA PRIMÁRIO                  -->
     <!-- ============================================= -->
-    <section class="py-20 md:py-32 px-6 md:px-8 bg-bg-deep">
-        <div class="max-w-content mx-auto reveal">
+    <section class="py-20 md:py-32 px-6 md:px-12 bg-bg-deep">
+        <div class="max-w-prose mx-auto reveal">
             
-            <!-- Large opening statement -->
-            <div class="mb-16">
-                <p class="font-serif text-2xl md:text-4xl leading-[1.3] text-text/90 font-light">
-                    Empresário, você já aprendeu a fazer dinheiro. Domina planilha, gestão, operação.
-                </p>
-            </div>
-
-            <!-- Body copy with emphasis -->
-            <div class="space-y-8 max-w-xl">
-                <p class="text-base md:text-lg leading-[1.8] text-text-muted font-light">
-                    Mas ninguém te ensinou a lidar com o peso emocional de carregar uma empresa nas costas.
-                </p>
-
-                <p class="text-base md:text-lg leading-[1.8] text-text-muted font-light">
-                    Você toma decisões no <span class="text-amber font-semibold">medo</span>, na <span class="text-amber font-semibold">raiva</span>, na <span class="text-amber font-semibold">ansiedade</span> — e cada decisão emocional custa caro no <span class="text-amber font-semibold">fluxo de caixa</span>.
-                </p>
-
-                <p class="text-base md:text-lg leading-[1.8] text-text-muted font-light">
-                    Sua equipe obedece por medo, não por visão. Sua família recebe o que sobra de você, não o melhor de você.
-                </p>
-
-                <p class="text-base md:text-lg leading-[1.8] text-text-muted font-light">
-                    Você carrega o piano e a orquestra sozinho. Chega em casa e é um estranho para quem mais ama. E o pior: ninguém sabe — porque empresário não pode parecer fraco.
-                </p>
-
-                <!-- Punch line -->
-                <div class="pt-6 border-t-2 border-amber/20">
-                    <p class="font-sans text-lg md:text-xl font-bold text-text leading-[1.5]">
-                        Ninguém vai te falar isso na sua cara:<br>
-                        o problema da sua empresa não é gestão. <span class="text-amber-bright">É você.</span>
-                    </p>
-                </div>
-            </div>
-
-            <!-- Blockquote - Brutalist style -->
-            <div class="mt-20 relative">
-                <div class="absolute -left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-amber via-amber-dark to-transparent"></div>
-                <p class="font-serif text-3xl md:text-5xl italic text-amber-bright leading-[1.15] font-bold pl-8">
-                    Dia 17 de março,<br>
-                    em Petrolina,<br>
-                    isso muda.
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- ============================================= -->
-    <!-- SEÇÃO 3 — CTA 1 + ALAVANCAGEM DE PREÇO        -->
-    <!-- ============================================= -->
-    <section class="py-20 md:py-28 px-6 md:px-8">
-        <div class="max-w-mobile mx-auto reveal">
-
-            <!-- Price Display - Brutalist -->
-            <div class="mb-10 bg-bg-card border-2 border-amber/30 p-8 md:p-10 relative overflow-hidden">
-                <!-- Decorative corner -->
-                <div class="absolute top-0 right-0 w-20 h-20 bg-amber/5"></div>
-                
-                <div class="relative">
-                    <p class="text-[10px] font-black uppercase tracking-[0.3em] text-amber mb-4">LOTE PROMOCIONAL</p>
-                    
-                    <!-- Old price -->
-                    <div class="flex items-center gap-3 mb-2">
-                        <span class="text-text-muted line-through text-xl font-light">R$ 197</span>
-                        <span class="text-xs uppercase tracking-wider text-text-muted/60">Valor normal</span>
-                    </div>
-                    
-                    <!-- New price - Large and bold -->
-                    <div class="mb-6">
-                        <div class="flex items-baseline gap-2">
-                            <span class="font-serif text-6xl md:text-7xl font-black text-amber-bright leading-none animate-count">47</span>
-                            <div class="flex flex-col">
-                                <span class="text-xl font-black text-amber">R$</span>
-                                <span class="text-xs uppercase tracking-wider text-text-muted">hoje</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <p class="text-sm text-text-muted leading-relaxed">
-                        Este evento custaria pelo menos R$ 235 em qualquer capital do Brasil. Valter está fazendo em Petrolina por R$ 47 como taxa de compromisso.
-                    </p>
-                </div>
-            </div>
-
-            <!-- CTA Button - Bold -->
-            <a href="#inscricao"
-                class="block w-full bg-amber hover:bg-amber-bright text-bg font-black text-sm md:text-base py-5 text-center uppercase tracking-wider transition-all duration-300 mb-6 pulse-cta"
-                style="box-shadow: 0 8px 32px rgba(212, 165, 116, 0.3);">
-                Garantir Vaga por R$ 47
-            </a>
-
-            <!-- Urgency Banner -->
-            <div class="bg-slate/20 border-l-4 border-amber p-5 mb-8">
-                <div class="flex items-start gap-3">
-                    <span class="material-icons text-amber text-xl mt-0.5">schedule</span>
-                    <div>
-                        <p class="text-sm font-bold text-text mb-1">90% dos ingressos já vendidos</p>
-                        <p class="text-xs text-text-muted">A oferta pode encerrar a qualquer momento</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Value proposition -->
-            <p class="text-center text-sm text-text-muted leading-relaxed mb-6 italic">
-                Uma única decisão emocional errada pode custar 5x mais que esse ingresso.<br>
-                Esse é o custo de <span class="text-amber font-semibold">não</span> ir.
-            </p>
-
-            <!-- Security badge -->
-            <div class="flex items-center justify-center gap-2 text-xs text-text-muted/60">
-                <span class="material-icons text-[14px]">lock</span>
-                <span>Pagamento seguro via Kiwify</span>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ============================================= -->
-    <!-- SEÇÃO 4 — PROMESSA DO EVENTO                  -->
-    <!-- ============================================= -->
-    <section class="py-20 md:py-32 px-6 md:px-8 bg-slate/5">
-        <div class="max-w-content mx-auto reveal">
-
-            <h2 class="font-serif text-3xl md:text-5xl font-black text-text mb-6 leading-tight">
-                O que vai acontecer<br>
-                <span class="text-amber-bright">dia 17/03</span>
+            <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-text mb-12 leading-tight">
+                <span class="text-gradient-gold">A Compressão</span> do Sucesso
             </h2>
 
-            <p class="text-base md:text-lg text-text-muted mb-16 max-w-lg font-light leading-relaxed">
-                Um encontro presencial exclusivo para empresários que faturam R$ 50k+/mês. Não é palestra motivacional. É mentoria coletiva de destravamento.
-            </p>
+            <div class="space-y-6 text-text-muted text-base md:text-lg leading-[1.9] font-light">
+                <p>
+                    Você trabalha 12 horas por dia. Sua empresa fatura bem. Mas quando chega em casa, você é um estranho. Seus filhos crescem longe. Seu casamento esfria. E o pior... você sente que não pode parar, porque tudo depende de você.
+                </p>
 
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div class="bg-bg-card border border-amber/20 p-6 relative group hover:border-amber/40 transition-colors">
-                    <div class="absolute top-0 left-0 w-1 h-full bg-amber"></div>
-                    <div class="pl-4">
-                        <div class="w-12 h-12 bg-amber/10 flex items-center justify-center mb-4">
-                            <span class="material-icons text-amber text-2xl">school</span>
-                        </div>
-                        <h3 class="font-black text-base uppercase tracking-wider text-text mb-3">Mentoria Coletiva</h3>
-                        <p class="text-sm text-text-muted leading-relaxed font-light">
-                            Imersão direta com Valter Moraes sobre gestão emocional aplicada ao negócio.
-                        </p>
-                    </div>
-                </div>
+                <p>
+                    Não é sua culpa. Ninguém te ensinou que existe um teto invisível. Um limite que não está no mercado, na equipe ou na estratégia. Está em você. Na forma como você lida com a pressão. Na forma como toma decisões quando está cansado, irritado ou ansioso.
+                </p>
 
-                <!-- Card 2 -->
-                <div class="bg-bg-card border border-amber/20 p-6 relative group hover:border-amber/40 transition-colors">
-                    <div class="absolute top-0 left-0 w-1 h-full bg-amber"></div>
-                    <div class="pl-4">
-                        <div class="w-12 h-12 bg-amber/10 flex items-center justify-center mb-4">
-                            <span class="material-icons text-amber text-2xl">handshake</span>
-                        </div>
-                        <h3 class="font-black text-base uppercase tracking-wider text-text mb-3">Networking Dirigido</h3>
-                        <p class="text-sm text-text-muted leading-relaxed font-light">
-                            Conexão real com outros empresários de Petrolina que jogam o jogo alto.
-                        </p>
-                    </div>
-                </div>
+                <p>
+                    Você foi treinado para crescer o negócio. Mas ninguém te preparou para crescer junto com ele. E agora, o sucesso que você construiu está esmagando sua vida.
+                </p>
 
-                <!-- Card 3 -->
-                <div class="bg-bg-card border border-amber/20 p-6 relative group hover:border-amber/40 transition-colors">
-                    <div class="absolute top-0 left-0 w-1 h-full bg-amber"></div>
-                    <div class="pl-4">
-                        <div class="w-12 h-12 bg-amber/10 flex items-center justify-center mb-4">
-                            <span class="material-icons text-amber text-2xl">shield</span>
-                        </div>
-                        <h3 class="font-black text-base uppercase tracking-wider text-text mb-3">Protocolo Prático</h3>
-                        <p class="text-sm text-text-muted leading-relaxed font-light">
-                            Ferramentas de aplicação imediata — você sai do evento já usando no dia seguinte.
-                        </p>
-                    </div>
+                <div class="pt-8 border-t border-gold/20">
+                    <p class="text-xl md:text-2xl text-text font-serif italic leading-relaxed">
+                        Esse fenômeno tem nome: <span class="text-gold font-semibold">Compressão do Sucesso.</span> E ele está roubando seu tempo, sua paz e sua família.
+                    </p>
                 </div>
             </div>
         </div>
@@ -498,50 +384,82 @@
 
 
     <!-- ============================================= -->
-    <!-- SEÇÃO 5 — BULLET POINTS                       -->
+    <!-- SEÇÃO 3: A OPORTUNIDADE                       -->
     <!-- ============================================= -->
-    <section class="py-20 md:py-32 px-6 md:px-8 bg-bg-deep">
-        <div class="max-w-content mx-auto reveal">
-
-            <h2 class="font-serif text-3xl md:text-5xl font-black text-text mb-16 leading-tight">
-                O que você vai<br>
-                <span class="text-amber-bright">descobrir</span>
+    <section class="py-20 md:py-32 px-6 md:px-12 bg-charcoal/30">
+        <div class="max-w-prose mx-auto reveal">
+            
+            <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-text mb-12 leading-tight">
+                O Protocolo de <span class="text-gradient-gold italic">Descompressão</span>
             </h2>
 
-            <div class="space-y-8 max-w-2xl">
-                <div class="border-l-4 border-amber pl-6 py-2">
-                    <p class="text-base md:text-lg text-text leading-relaxed">
-                        <span class="font-black text-amber-bright">O Protocolo de 5 Decisões Sob Pressão</span> — a ferramenta que separa o empresário que reage do que lidera — e que você vai usar na segunda-feira de manhã quando o caos bater na porta.
+            <div class="space-y-6 text-text-muted text-base md:text-lg leading-[1.9] font-light">
+                <p>
+                    Existe uma forma de escalar o faturamento sem que sua vida pessoal desmorone. Não é sobre trabalhar menos horas de forma mágica. É sobre reforçar a fundação emocional que sustenta tudo.
+                </p>
+
+                <p>
+                    Quando você domina o <span class="text-gold font-semibold">Protocolo de Descompressão de Sucesso</span>, algo muda. Você para de tomar decisões no impulso. Para de descontar a pressão na equipe e na família. E começa a liderar com clareza, mesmo nos dias mais difíceis.
+                </p>
+
+                <div class="bg-bg-card border border-gold/20 p-8 my-10">
+                    <p class="text-text text-lg leading-relaxed font-serif">
+                        O resultado é direto: <span class="text-gold font-semibold">sua empresa cresce porque você está no comando, não no desespero.</span> Sua equipe respira porque você lidera, não pressiona. E sua família volta a te ver como o homem que eles admiram, não como o fantasma cansado que só aparece para dormir.
                     </p>
                 </div>
 
-                <div class="border-l-4 border-amber pl-6 py-2">
-                    <p class="text-base md:text-lg text-text leading-relaxed">
-                        Por que <span class="font-black text-amber-bright">o empresário que grita</span> na segunda é o mesmo que perde o contrato de R$ 200k na sexta — e como quebrar esse ciclo em uma única noite.
+                <p class="text-xl md:text-2xl text-text font-serif italic leading-relaxed">
+                    Você finalmente constrói o legado que sempre quis... <span class="text-gold font-semibold">sem destruir quem você ama no processo.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- SEÇÃO 4: PARA QUEM É                          -->
+    <!-- ============================================= -->
+    <section class="py-20 md:py-32 px-6 md:px-12 bg-bg-deep">
+        <div class="max-w-wide mx-auto reveal">
+            
+            <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-text mb-4 leading-tight text-center">
+                <span class="text-gradient-gold">PARA QUEM É</span>
+            </h2>
+
+            <div class="gold-line w-24 mx-auto my-8"></div>
+
+            <div class="grid md:grid-cols-3 gap-8 mt-16">
+                
+                <!-- Persona 1 -->
+                <div class="bg-bg-card border border-gold/20 p-8 hover:border-gold/40 transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-gold/10 flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
+                        <span class="material-icons text-gold text-3xl">trending_up</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-text mb-4 uppercase tracking-wide">Empresários que Faturam Mais de 50k/Mês</h3>
+                    <p class="text-text-muted leading-relaxed font-light">
+                        Você já provou que sabe fazer dinheiro. Agora precisa aprender a fazer dinheiro sem perder sua vida no processo.
                     </p>
                 </div>
 
-                <div class="border-l-4 border-amber pl-6 py-2">
-                    <p class="text-base md:text-lg text-text leading-relaxed">
-                        <span class="font-black text-amber-bright">A Hierarquia de Valores</span> do Valter Moraes — o framework que coloca Deus, Família e Negócios na ordem certa (e por que inverter essa ordem está travando seu faturamento).
+                <!-- Persona 2 -->
+                <div class="bg-bg-card border border-gold/20 p-8 hover:border-gold/40 transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-gold/10 flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
+                        <span class="material-icons text-gold text-3xl">link_off</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-text mb-4 uppercase tracking-wide">Líderes Esgotados que Carregam Tudo Sozinhos</h3>
+                    <p class="text-text-muted leading-relaxed font-light">
+                        Se você sente que sua empresa não funciona sem você e que está preso em uma gaiola de ouro, esse encontro é sua saída.
                     </p>
                 </div>
 
-                <div class="border-l-4 border-amber pl-6 py-2">
-                    <p class="text-base md:text-lg text-text leading-relaxed">
-                        O conceito de <span class="font-black text-amber-bright">"Blindagem Emocional"</span> — como criar uma camada de proteção mental que impede que críticas, erros e crises te tirem do eixo por dias.
-                    </p>
-                </div>
-
-                <div class="border-l-4 border-amber pl-6 py-2">
-                    <p class="text-base md:text-lg text-text leading-relaxed">
-                        <span class="font-black text-amber-bright">A sala que Petrolina nunca teve</span> — empresários que faturam R$ 50k+/mês, na mesma mesa, falando sobre o que ninguém fala em público — e por que sair desse encontro com 3 conexões reais pode mudar seu próximo trimestre.
-                    </p>
-                </div>
-
-                <div class="border-l-4 border-amber pl-6 py-2">
-                    <p class="text-base md:text-lg text-text leading-relaxed">
-                        <span class="font-black text-amber-bright">"Meu pai era assim e eu estou repetindo."</span> Se você reconhece esse padrão, este evento foi feito para você — descubra como quebrar o ciclo e construir um legado que vai além do CNPJ.
+                <!-- Persona 3 -->
+                <div class="bg-bg-card border border-gold/20 p-8 hover:border-gold/40 transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-gold/10 flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
+                        <span class="material-icons text-gold text-3xl">home_filled</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-text mb-4 uppercase tracking-wide">Pais e Mães que Querem Estar Presentes</h3>
+                    <p class="text-text-muted leading-relaxed font-light">
+                        Você construiu um império, mas perdeu os jantares, os jogos de futebol e as conversas. Chegou a hora de restaurar o que importa.
                     </p>
                 </div>
             </div>
@@ -550,162 +468,417 @@
 
 
     <!-- ============================================= -->
-    <!-- SEÇÃO 6 — GARANTIA + ESCASSEZ                 -->
+    <!-- SEÇÃO 5: PROPOSTA DE VALOR                    -->
     <!-- ============================================= -->
-    <section class="py-20 md:py-28 px-6 md:px-8">
-        <div class="max-w-mobile mx-auto grid gap-8 reveal">
+    <section class="py-20 md:py-32 px-6 md:px-12 bg-charcoal/30">
+        <div class="max-w-wide mx-auto reveal">
+            
+            <h2 class="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-text mb-4 leading-tight text-center">
+                Por que o Encontro Empresarial é<br>
+                <span class="text-gradient-gold">diferente de tudo que você já tentou</span>
+            </h2>
 
-            <!-- Garantia -->
-            <div class="bg-bg-card border-2 border-amber p-8 md:p-10 relative">
-                <div class="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-amber/30"></div>
-                <div class="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-amber/30"></div>
+            <div class="gold-line w-24 mx-auto my-8"></div>
+
+            <div class="grid md:grid-cols-2 gap-8 mt-16 max-w-4xl mx-auto">
                 
-                <div class="flex items-start gap-4 mb-6">
-                    <div class="w-12 h-12 bg-amber/10 flex items-center justify-center flex-shrink-0">
-                        <span class="material-icons text-amber text-2xl">verified_user</span>
+                <!-- Benefício 1 -->
+                <div class="flex gap-5">
+                    <div class="flex-shrink-0 w-14 h-14 bg-gold/10 flex items-center justify-center">
+                        <span class="material-icons text-gold text-2xl">flash_on</span>
                     </div>
                     <div>
-                        <h3 class="text-[10px] font-black uppercase tracking-[0.3em] text-amber mb-2">Garantia</h3>
-                        <p class="font-serif text-xl md:text-2xl text-text italic leading-snug">
-                            "Se nos primeiros 30 minutos você sentir que não é pra você, levante a mão. Devolvemos 100% na hora, sem pergunta nenhuma."
+                        <h3 class="font-bold text-lg text-gold mb-3">Clareza Imediata Para Decisões Sob Pressão</h3>
+                        <p class="text-text-muted leading-relaxed font-light">
+                            Você vai sair daqui sabendo exatamente como tomar decisões rápidas e certeiras, mesmo quando a pressão está alta e o tempo é curto. Sem mais travar na hora que mais importa.
                         </p>
                     </div>
                 </div>
-                <p class="text-sm text-text-muted font-bold">O risco é 100% nosso.</p>
-            </div>
 
-            <!-- Urgency -->
-            <div class="bg-slate/20 border-l-4 border-amber p-6">
-                <div class="flex items-center gap-3 mb-2">
-                    <span class="material-icons text-amber text-xl">schedule</span>
-                    <h3 class="text-lg font-black uppercase tracking-wider text-text">Últimas Unidades</h3>
+                <!-- Benefício 2 -->
+                <div class="flex gap-5">
+                    <div class="flex-shrink-0 w-14 h-14 bg-gold/10 flex items-center justify-center">
+                        <span class="material-icons text-gold text-2xl">balance</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-gold mb-3">Crescimento Sem Culpa</h3>
+                        <p class="text-text-muted leading-relaxed font-light">
+                            Você vai aprender como escalar o faturamento da sua empresa sem sentir que está roubando tempo da sua família. O sucesso para de ser uma escolha entre dinheiro ou paz.
+                        </p>
+                    </div>
                 </div>
-                <p class="text-sm text-text-muted mb-1">90% dos ingressos do lote promocional já foram vendidos.</p>
-                <p class="text-sm text-amber font-bold">A oferta pode se encerrar a qualquer momento.</p>
+
+                <!-- Benefício 3 -->
+                <div class="flex gap-5">
+                    <div class="flex-shrink-0 w-14 h-14 bg-gold/10 flex items-center justify-center">
+                        <span class="material-icons text-gold text-2xl">build</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-gold mb-3">Ferramentas Práticas, Não Teoria</h3>
+                        <p class="text-text-muted leading-relaxed font-light">
+                            Você recebe um protocolo pronto para usar na segunda-feira. Nada de enrolação ou conceitos vagos. São passos claros que você aplica e vê o resultado no mesmo dia.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Benefício 4 -->
+                <div class="flex gap-5">
+                    <div class="flex-shrink-0 w-14 h-14 bg-gold/10 flex items-center justify-center">
+                        <span class="material-icons text-gold text-2xl">shield</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-gold mb-3">Blindagem Emocional Para Liderar Melhor</h3>
+                        <p class="text-text-muted leading-relaxed font-light">
+                            Você vai desenvolver a casca grossa emocional para navegar crises, críticas e pressão sem perder o eixo. Sua equipe vai sentir a diferença de um líder que comanda com clareza, não com estresse.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
 
     <!-- ============================================= -->
-    <!-- SEÇÃO 7 — CTA 2 + OFERTA CASAL                -->
+    <!-- SEÇÃO 6: PROVA                                -->
     <!-- ============================================= -->
-    <section class="py-16 md:py-20 px-6 md:px-8">
-        <div class="max-w-mobile mx-auto reveal">
+    <section class="py-20 md:py-32 px-6 md:px-12 bg-bg-deep">
+        <div class="max-w-wide mx-auto reveal">
+            
+            <h2 class="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-text mb-4 leading-tight text-center">
+                Veja o que acontece quando você para de apagar incêndio<br>
+                <span class="text-gradient-gold">e começa a liderar de verdade</span>
+            </h2>
 
-            <!-- CTA -->
-            <a href="#inscricao"
-                class="block w-full bg-amber hover:bg-amber-bright text-bg font-black text-sm md:text-base py-5 text-center uppercase tracking-wider transition-all duration-300 mb-10 pulse-cta"
-                style="box-shadow: 0 8px 32px rgba(212, 165, 116, 0.3);">
-                Garantir Vaga no Lote Promocional — R$ 47
-            </a>
+            <div class="gold-line w-24 mx-auto my-8"></div>
 
-            <!-- Next Batch Preview -->
-            <div class="bg-bg-card/50 border border-text-muted/20 p-6 text-center">
-                <p class="text-xs uppercase tracking-wider text-text-muted mb-3">Próximo lote</p>
-                <p class="text-3xl font-black text-text-muted/40 line-through">R$ 197</p>
-                <p class="text-xs text-text-muted/60 mt-3">Aproveite o lote promocional enquanto durarem as unidades</p>
+            <!-- Depoimentos -->
+            <div class="grid md:grid-cols-2 gap-8 mt-16 max-w-4xl mx-auto">
+                
+                <!-- Depoimento 1 -->
+                <div class="bg-bg-card border border-gold/20 p-8 relative">
+                    <span class="material-icons text-gold/20 text-6xl absolute top-4 right-4">format_quote</span>
+                    <p class="text-text text-lg leading-relaxed font-serif italic mb-6">
+                        "Eu estava travado por crenças antigas que me impediam de crescer. O treinamento me libertou disso e foi a chave para aumentar o faturamento de 100 mil para quase 300 mil por mês."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center">
+                            <span class="material-icons text-gold">person</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-text">Empresário do setor de serviços</p>
+                            <p class="text-sm text-text-muted">Nordeste</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 2 -->
+                <div class="bg-bg-card border border-gold/20 p-8 relative">
+                    <span class="material-icons text-gold/20 text-6xl absolute top-4 right-4">format_quote</span>
+                    <p class="text-text text-lg leading-relaxed font-serif italic mb-6">
+                        "Eu queria liberdade financeira para ter mais tempo com minha família, mas estava travado. As ferramentas que recebi me ajudaram a crescer como homem e empresário. Construí uma rede de clínicas e finalmente conquistei o equilíbrio que buscava."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center">
+                            <span class="material-icons text-gold">person</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-text">Empreendedor do setor de saúde</p>
+                            <p class="text-sm text-text-muted">Pernambuco</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Security -->
-            <div class="flex items-center justify-center gap-2 text-xs text-text-muted/60 mt-6">
-                <span class="material-icons text-[14px]">lock</span>
-                <span>Pagamento seguro via Kiwify</span>
+            <!-- Autoridade -->
+            <div class="mt-16 text-center">
+                <div class="bg-bg-card/50 border border-gold/20 p-8 max-w-3xl mx-auto">
+                    <p class="text-text-muted text-base leading-relaxed">
+                        <span class="text-gold font-semibold">Valter Moraes</span> já conduziu dezenas de empresários através do processo de <span class="text-gold font-semibold">Descompressão de Sucesso</span>, ajudando-os a escalar seus negócios enquanto restauram suas famílias. Este encontro reúne o melhor do método em um único dia.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
 
     <!-- ============================================= -->
-    <!-- SEÇÃO 8 — FRASE PERSUASIVA (QUEBRA VISUAL)    -->
+    <!-- SEÇÃO 7: A HISTÓRIA DE ORIGEM                 -->
     <!-- ============================================= -->
-    <section class="py-24 md:py-32 px-6 md:px-8 bg-bg-deep">
-        <div class="max-w-content mx-auto text-center">
-            <!-- Decorative line -->
-            <div class="w-20 h-[2px] mx-auto mb-12 bg-gradient-to-r from-transparent via-amber to-transparent"></div>
+    <section class="py-20 md:py-32 px-6 md:px-12 bg-charcoal/30">
+        <div class="max-w-prose mx-auto reveal">
+            
+            <h2 class="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-text mb-12 leading-tight">
+                Como eu descobri que o maior gargalo do meu sucesso<br>
+                <span class="text-gradient-gold italic">era eu mesmo</span>
+            </h2>
 
-            <p class="font-serif italic text-2xl md:text-4xl text-amber-bright leading-tight max-w-2xl mx-auto font-light">
-                "Pois que aproveita ao homem ganhar o mundo inteiro, se perder a sua alma?"<br>
-                <span class="text-text/60">— e a sua mesa de jantar.</span>
+            <!-- Imagem antes/depois placeholder -->
+            <div class="flex gap-4 mb-12">
+                <div class="flex-1 aspect-[3/4] img-placeholder flex items-center justify-center border border-gold/20">
+                    <div class="text-center p-4">
+                        <span class="material-icons text-gold/40 text-4xl mb-2">image</span>
+                        <p class="text-text-muted text-xs">Foto 8 anos atrás</p>
+                    </div>
+                </div>
+                <div class="flex-1 aspect-[3/4] img-placeholder flex items-center justify-center border border-gold/20">
+                    <div class="text-center p-4">
+                        <span class="material-icons text-gold/40 text-4xl mb-2">image</span>
+                        <p class="text-text-muted text-xs">Foto atual</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6 text-text-muted text-base md:text-lg leading-[1.9] font-light">
+                <p>
+                    Há oito anos atrás, estava eu lá.
+                </p>
+
+                <p class="text-xl text-text font-serif">
+                    Com uma arma apontada para minha cabeça e uma dívida de <span class="text-gold font-semibold">R$ 498.000</span> que me sufocava.
+                </p>
+
+                <p>
+                    Para quem olhava de fora, eu era empresário. Mas por dentro? Eu estava completamente quebrado. Não só financeiramente. Emocionalmente, espiritualmente, em todos os aspectos.
+                </p>
+
+                <p>
+                    Minha família estava despedaçada. Minha esposa não me respeitava mais. Meus filhos me viam como um fracassado. E eu? Eu me odiava. Trabalhava feito um condenado, mas tudo que eu tocava virava cinzas.
+                </p>
+
+                <p>
+                    Eu achava que o problema era o mercado. Ou a concorrência desleal. Ou a falta de oportunidades. Ou o governo. Ou qualquer coisa... <span class="text-gold font-semibold">menos eu.</span>
+                </p>
+
+                <div class="bg-wine/20 border-l-4 border-gold p-6 my-8">
+                    <p class="text-text text-lg font-serif italic leading-relaxed">
+                        Até que naquele momento, com o cano da arma gelado na minha testa, eu entendi a verdade brutal:
+                    </p>
+                    <p class="text-gold text-xl font-bold mt-4">
+                        O inimigo não estava lá fora. Estava dentro da minha própria mente.
+                    </p>
+                </div>
+
+                <p>
+                    Crenças limitantes sobre dinheiro. Medo disfarçado de prudência. Autossabotagem mascarada de "realismo". Eu estava destruindo tudo que tocava porque por dentro eu não acreditava que merecia o sucesso.
+                </p>
+
+                <p class="text-xl text-text font-serif">
+                    Foi aí que tudo mudou.
+                </p>
+
+                <p>
+                    Em vez de desistir, eu tomei a decisão mais difícil da minha vida: parar de fugir de mim mesmo e começar a me reconstruir do zero.
+                </p>
+
+                <div class="bg-bg-card border border-gold/20 p-8 my-8">
+                    <div class="flex items-start gap-4 mb-4">
+                        <span class="material-icons text-gold">arrow_forward</span>
+                        <p class="text-text">Mais de <span class="text-gold font-bold">3.000 horas</span> de estudo intensivo em inteligência emocional, neurociência e comportamento humano.</p>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="material-icons text-gold">arrow_forward</span>
+                        <p class="text-text">Mais de <span class="text-gold font-bold">4.000 horas</span> de palco testando e refinando cada estratégia na prática.</p>
+                    </div>
+                </div>
+
+                <p class="text-xl text-text font-serif">
+                    O resultado? <span class="text-gold font-semibold">Dívidas zeradas.</span> Negócios milionários construídos — hoje estou à frente da Lider Prevenções, Arca Treinamentos e Rede Mestre de Obra. <span class="text-gold font-semibold">Família completamente restaurada.</span>
+                </p>
+
+                <p>
+                    Mas o mais importante: eu descobri o mapa exato de como sair da compressão mental que me mantinha preso.
+                </p>
+
+                <p>
+                    E foi aí que eu entendi: se eu consegui sair do fundo do poço e construir negócios milionários, outros empresários também podem. Só precisam do mapa certo.
+                </p>
+
+                <div class="pt-8 border-t border-gold/20 mt-8">
+                    <p class="text-xl text-text font-serif italic leading-relaxed">
+                        Por isso criei o <span class="text-gold font-semibold">Encontro Empresarial</span>. Para entregar em 4 horas o que me levou anos de sofrimento para descobrir. Para que você não precise perder mais tempo, mais dinheiro e mais família até entender que o jogo muda quando você ajusta o jogador.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- SEÇÃO 8: DETALHAMENTO DO PRODUTO              -->
+    <!-- ============================================= -->
+    <section class="py-20 md:py-32 px-6 md:px-12 bg-bg-deep">
+        <div class="max-w-wide mx-auto reveal">
+            
+            <h2 class="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-text mb-4 leading-tight text-center">
+                <span class="text-gradient-gold">O QUE ACONTECE</span> NO ENCONTRO
+            </h2>
+
+            <div class="gold-line w-24 mx-auto my-8"></div>
+
+            <div class="grid md:grid-cols-3 gap-8 mt-16 max-w-5xl mx-auto">
+                
+                <!-- Passo 1 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-gold flex items-center justify-center">
+                        <span class="font-bold text-bg text-xl">1</span>
+                    </div>
+                    <div class="bg-bg-card border border-gold/20 p-8 pt-12 h-full">
+                        <div class="w-14 h-14 bg-gold/10 flex items-center justify-center mb-6">
+                            <span class="material-icons text-gold text-2xl">search</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-gold mb-4 uppercase tracking-wide">DIAGNÓSTICO DA COMPRESSÃO</h3>
+                        <p class="text-text-muted leading-relaxed font-light">
+                            Você vai identificar onde o sucesso está vazando sua energia. Vamos mapear os pontos exatos onde a pressão está rachando sua vida pessoal e sua liderança. Sem enrolação, só clareza.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Passo 2 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-gold flex items-center justify-center">
+                        <span class="font-bold text-bg text-xl">2</span>
+                    </div>
+                    <div class="bg-bg-card border border-gold/20 p-8 pt-12 h-full">
+                        <div class="w-14 h-14 bg-gold/10 flex items-center justify-center mb-6">
+                            <span class="material-icons text-gold text-2xl">security</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-gold mb-4 uppercase tracking-wide">BLINDAGEM EMOCIONAL</h3>
+                        <p class="text-text-muted leading-relaxed font-light">
+                            Você aprende a criar espaço entre o gatilho e sua reação. É aqui que você desenvolve a capacidade de decidir com a cabeça fria, mesmo quando tudo está pegando fogo ao seu redor.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Passo 3 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-gold flex items-center justify-center">
+                        <span class="font-bold text-bg text-xl">3</span>
+                    </div>
+                    <div class="bg-bg-card border border-gold/20 p-8 pt-12 h-full">
+                        <div class="w-14 h-14 bg-gold/10 flex items-center justify-center mb-6">
+                            <span class="material-icons text-gold text-2xl">explore</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-gold mb-4 uppercase tracking-wide">LIDERANÇA RESTAURATIVA</h3>
+                        <p class="text-text-muted leading-relaxed font-light">
+                            Você descobre como liderar sua equipe sem desgaste e reconectar com sua família. Transformamos o ambiente de pressão em um sistema que trabalha a seu favor, não contra você.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- SEÇÃO 9: A OFERTA E OS PREÇOS                 -->
+    <!-- ============================================= -->
+    <section class="py-20 md:py-32 px-6 md:px-12 bg-charcoal/30">
+        <div class="max-w-lg mx-auto reveal">
+            
+            <h2 class="font-serif text-2xl md:text-3xl font-bold text-text mb-4 leading-tight text-center">
+                <span class="text-gradient-gold">O INVESTIMENTO</span>
+            </h2>
+
+            <p class="text-center text-text-muted mb-10">
+                Apenas 47 reais para estar presente no dia 17 de março em Petrolina.
             </p>
 
-            <!-- Decorative line -->
-            <div class="w-20 h-[2px] mx-auto mt-12 bg-gradient-to-r from-transparent via-amber to-transparent"></div>
-        </div>
-    </section>
-
-
-    <!-- ============================================= -->
-    <!-- SEÇÃO 9 — BIO DO EXPERT                       -->
-    <!-- ============================================= -->
-    <section class="py-20 md:py-32 px-6 md:px-8 bg-slate/5">
-        <div class="max-w-content mx-auto reveal">
-
-            <h2 class="font-serif text-3xl md:text-5xl font-black text-text mb-12 leading-tight">
-                Quem é<br>
-                <span class="text-amber-bright">Valter Moraes</span>
-            </h2>
-
-            <!-- Photo + Name Header -->
-            <div class="flex flex-col md:flex-row gap-8 mb-10">
+            <!-- Price Card -->
+            <div class="bg-bg-card border-2 border-gold/40 p-8 md:p-10 relative overflow-hidden">
+                
+                <!-- Decorative -->
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-bl-full"></div>
+                
                 <div class="relative">
-                    <img src="assets/valter.JPEG"
-                        alt="Valter Moraes" class="w-full md:w-[200px] h-[280px] md:h-[280px] object-cover"
-                        style="filter: grayscale(20%);" loading="lazy">
-                    <div class="absolute top-0 left-0 w-full h-full border-4 border-amber/30 -translate-x-3 -translate-y-3 -z-10"></div>
-                </div>
-                <div class="flex-1">
-                    <div class="mb-6">
-                        <p class="text-2xl md:text-3xl font-black text-text mb-2">Valter Moraes</p>
-                        <p class="text-xs font-black uppercase tracking-[0.3em] text-amber">Especialista em IE Empresarial</p>
-                    </div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-gold mb-6">Ingresso: Descompressão Empresarial</p>
                     
-                    <!-- Bio text -->
-                    <div class="space-y-6 text-text-muted text-base leading-relaxed font-light">
-                        <p>
-                            Especialista em Inteligência Emocional aplicada a negócios, Valter já mentorou centenas de empresários no Nordeste que faturam de R$ 30k a R$ 500k/mês — e descobriram que o maior gargalo do crescimento não era estratégia, era eles mesmos.
-                        </p>
-                        <p>
-                            Com uma abordagem prática e direta (sem misticismo, sem coach de palco), ele desenvolveu protocolos de gestão emocional que empresários aplicam no dia seguinte — com impacto direto no faturamento, na equipe e na família.
-                        </p>
+                    <!-- Included items -->
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <span class="material-icons text-gold text-lg mt-0.5">check_circle</span>
+                            <span class="text-text text-sm">Acesso ao encontro presencial de 3 a 4 horas com Valter Moraes</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-icons text-gold text-lg mt-0.5">check_circle</span>
+                            <span class="text-text text-sm">Protocolo de 5 Decisões Sob Pressão (material exclusivo entregue no evento)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-icons text-gold text-lg mt-0.5">check_circle</span>
+                            <span class="text-text text-sm">Networking qualificado com empresários que faturam 50k ou mais por mês</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-icons text-gold text-lg mt-0.5">check_circle</span>
+                            <span class="text-text text-sm">Garantia de satisfação: reembolso integral nos primeiros 30 minutos</span>
+                        </li>
+                    </ul>
+
+                    <!-- Price -->
+                    <div class="text-center py-6 border-t border-gold/20">
+                        <p class="text-sm text-text-muted mb-2">Preço:</p>
+                        <div class="flex items-center justify-center gap-2">
+                            <span class="text-2xl font-bold text-gold">R$</span>
+                            <span class="font-serif text-6xl md:text-7xl font-black text-gold-bright">47</span>
+                            <span class="text-2xl font-bold text-gold">,00</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <a href="#inscricao"
+                        class="block w-full bg-gold hover:bg-gold-bright text-bg font-bold text-base py-5 text-center uppercase tracking-wider transition-all duration-300 mt-6 animate-pulse-cta btn-primary">
+                        SIM, EU QUERO DESTRAVAR MEU PRÓXIMO NÍVEL
+                    </a>
+
+                    <!-- Security -->
+                    <div class="flex items-center justify-center gap-2 text-xs text-text-muted/60 mt-6">
+                        <span class="material-icons text-sm">lock</span>
+                        <span>Pagamento seguro</span>
                     </div>
                 </div>
             </div>
 
-            <div class="border-l-4 border-amber pl-6 py-2 mb-8">
-                <p class="font-serif italic text-text text-lg md:text-xl leading-relaxed">
-                    Agora, ele volta a Petrolina — sua cidade — com um formato inédito: mentoria coletiva presencial para empresários de alto nível.
+            <!-- Networking highlight -->
+            <div class="mt-6 bg-gold/10 border border-gold/20 p-4 text-center">
+                <p class="text-sm text-gold font-medium">
+                    <span class="material-icons text-sm align-middle mr-1">groups</span>
+                    Conexões reais com empresários do seu nível que entendem sua pressão
                 </p>
             </div>
-
-            <!-- Instagram -->
-            <a href="https://instagram.com/valtermoraes" target="_blank" rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 px-6 py-3 border border-amber text-sm text-amber hover:bg-amber/10 transition-colors font-bold uppercase tracking-wider">
-                <span class="material-icons text-sm">photo_camera</span> @valtermoraes
-            </a>
         </div>
     </section>
 
 
     <!-- ============================================= -->
-    <!-- SEÇÃO 10 — PROVA SOCIAL                       -->
+    <!-- SEÇÃO 10: GARANTIA                            -->
     <!-- ============================================= -->
-    <section class="py-20 md:py-28 px-6 md:px-8 bg-bg-deep">
-        <div class="max-w-content mx-auto reveal">
-            <div class="bg-bg-card border-2 border-amber/20 p-8 md:p-12">
+    <section class="py-20 md:py-32 px-6 md:px-12 bg-bg-deep">
+        <div class="max-w-lg mx-auto reveal">
+            
+            <h2 class="font-serif text-2xl md:text-3xl font-bold text-text mb-4 leading-tight text-center">
+                <span class="text-gradient-gold">NOSSA GARANTIA</span>
+            </h2>
 
-                <div class="text-center mb-10">
-                    <p class="font-serif text-3xl md:text-4xl font-black text-amber-bright mb-4">
-                        +500 empresários
-                    </p>
-                    <p class="text-text-muted text-base md:text-lg max-w-lg mx-auto font-light leading-relaxed">
-                        De donos de agências a empresários do agronegócio, de quem fatura R$ 30k a quem fatura R$ 500k/mês — todos descobriram que o maior gargalo do crescimento não era estratégia. Era eles mesmos.
-                    </p>
+            <div class="gold-line w-24 mx-auto my-8"></div>
+
+            <div class="bg-bg-card border-2 border-gold/30 p-8 md:p-10 text-center relative">
+                
+                <!-- Shield icon -->
+                <div class="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="material-icons text-gold text-4xl">verified_user</span>
                 </div>
 
-                <div class="border-l-4 border-amber pl-6 py-4 bg-slate/10 max-w-xl mx-auto">
-                    <p class="font-serif italic text-text text-lg md:text-xl leading-relaxed">
-                        "Eu achava que precisava de mais gestão. Depois do Valter, entendi que precisava de mais domínio próprio. Meu faturamento subiu, mas o que mudou de verdade foi minha casa."
+                <h3 class="font-bold text-xl text-gold mb-6">Garantia de Clareza ou Seu Dinheiro de Volta</h3>
+
+                <p class="text-text-muted leading-relaxed mb-6">
+                    Se nos primeiros 30 minutos do encontro você sentir que não está recebendo o valor prometido, basta nos avisar no local. Devolvemos <span class="text-gold font-semibold">100% do seu investimento</span> na hora. Sem perguntas, sem burocracia.
+                </p>
+
+                <p class="text-text-muted leading-relaxed mb-6">
+                    Eu sei que você já tentou de tudo. Cursos, livros, consultorias. E ainda assim sente que algo te trava. Por isso assumo todo o risco. Você só precisa aparecer e dar uma chance para o método. Se não funcionar para você, o dinheiro volta para o seu bolso.
+                </p>
+
+                <div class="pt-6 border-t border-gold/20">
+                    <p class="text-xl font-serif italic text-text">
+                        O risco é todo meu. <span class="text-gold font-semibold">A transformação é toda sua.</span>
                     </p>
                 </div>
             </div>
@@ -714,240 +887,439 @@
 
 
     <!-- ============================================= -->
-    <!-- SEÇÃO 11 — FAQ (ACCORDION)                    -->
+    <!-- SEÇÃO 11: VISÃO DE FUTURO                     -->
     <!-- ============================================= -->
-    <section class="py-20 md:py-32 px-6 md:px-8">
-        <div class="max-w-content mx-auto">
-
-            <h2 class="font-serif text-3xl md:text-5xl font-black text-text mb-16 leading-tight">
-                Perguntas<br>
-                <span class="text-amber-bright">frequentes</span>
+    <section class="py-20 md:py-32 px-6 md:px-12 bg-charcoal/30">
+        <div class="max-w-prose mx-auto reveal">
+            
+            <h2 class="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-text mb-12 leading-tight">
+                <span class="text-gradient-gold">O Dia Seguinte</span> ao Evento
             </h2>
 
-            <div class="max-w-2xl mx-auto" id="faq-container">
+            <div class="space-y-6 text-text-muted text-base md:text-lg leading-[1.9] font-light">
+                <p class="text-xl text-text font-serif italic">
+                    Imagina acordar na segunda-feira e sentir algo diferente.
+                </p>
 
-                <!-- FAQ 1 (aberto por padrão) -->
-                <div class="faq-item border-b border-amber/20">
-                    <button class="w-full py-6 flex justify-between items-center text-left focus:outline-none group"
-                        aria-expanded="true">
-                        <span class="font-bold text-base md:text-lg text-text group-hover:text-amber-bright transition-colors">Preciso faturar exatamente R$ 50k?</span>
-                        <span class="material-icons text-amber transition-transform duration-300 rotate-180">expand_more</span>
+                <p class="text-lg text-text">
+                    Não é empolgação vazia. <span class="text-gold font-semibold">É clareza.</span>
+                </p>
+
+                <p>
+                    Você olha para a agenda e sabe exatamente o que precisa fazer. Não está mais apagando incêndio. Está construindo.
+                </p>
+
+                <p>
+                    Sua equipe percebe a mudança. Você lidera sem gritar. Sem pressão. Sem desgaste. E o resultado aparece no caixa.
+                </p>
+
+                <p>
+                    Você chega em casa e não está esgotado. Janta com a família. Conversa de verdade. Seus filhos te olham nos olhos e você está presente. Sua esposa percebe que você voltou.
+                </p>
+
+                <p>
+                    Nos próximos 90 dias, o faturamento cresce. Mas você trabalha menos horas. Porque agora você sabe onde focar. Sabe delegar. Sabe confiar.
+                </p>
+
+                <p class="text-lg text-text font-serif">
+                    Daqui a um ano, você é o patriarca que sempre quis ser. A empresa prospera. A família está unida. <span class="text-gold font-semibold">Você dorme tranquilo.</span>
+                </p>
+
+                <div class="bg-bg-card border border-gold/20 p-8 my-10">
+                    <p class="text-text text-lg leading-relaxed">
+                        Esse é o futuro que te espera se você tomar a decisão certa agora.
+                    </p>
+                </div>
+
+                <h3 class="text-xl text-text font-serif font-bold mt-12 mb-6">Mas e se você não vier?</h3>
+
+                <p>
+                    Olha... você vai continuar na mesma. Trabalhando feito louco. Vendo o casamento esfriar. Perdendo os momentos com os filhos. Sentindo que o sucesso virou uma prisão.
+                </p>
+
+                <p>
+                    Daqui a seis meses, você vai olhar para trás e perceber que nada mudou. Porque você não mudou.
+                </p>
+
+                <p>
+                    E o pior... você vai ver outros empresários que estavam na mesma situação que você avançando. Crescendo. Prosperando. Enquanto você ficou parado.
+                </p>
+
+                <p class="text-lg text-text font-serif">
+                    Não porque você não é capaz. Mas porque você não agiu quando teve a chance.
+                </p>
+
+                <div class="bg-wine/20 border-l-4 border-gold p-6 my-8">
+                    <p class="text-text text-lg font-serif leading-relaxed">
+                        O evento é dia <span class="text-gold font-bold">17 de março</span>. Em <span class="text-gold font-bold">Petrolina</span>.
+                    </p>
+                    <p class="text-text text-lg font-serif mt-4">
+                        A decisão é sua.
+                    </p>
+                </div>
+
+                <p class="text-xl text-text font-serif italic">
+                    Mas eu te digo uma coisa: <span class="text-gold font-semibold">o custo de não vir é muito maior que o valor do ingresso.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- SEÇÃO 12: ÚLTIMAS DÚVIDAS                     -->
+    <!-- ============================================= -->
+    <section class="py-20 md:py-32 px-6 md:px-12 bg-bg-deep">
+        <div class="max-w-3xl mx-auto reveal">
+            
+            <h2 class="font-serif text-2xl md:text-3xl font-bold text-text mb-4 leading-tight text-center">
+                <span class="text-gradient-gold">Antes de Garantir Seu Lugar</span>
+            </h2>
+
+            <div class="gold-line w-24 mx-auto my-8"></div>
+
+            <div class="space-y-6 mt-12">
+                
+                <!-- Objeção 1 -->
+                <div class="bg-bg-card border border-gold/20 p-6 md:p-8">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-gold/10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-icons text-gold text-xl">schedule</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-text mb-3">"Não tenho tempo para parar e ir a um evento agora."</h3>
+                            <p class="text-text-muted leading-relaxed font-light">
+                                Eu te entendo. Sua empresa depende de você. Mas é exatamente por isso que você precisa estar aqui. São apenas 3 a 4 horas. Meio período. E o que você vai aprender vai te economizar centenas de horas de trabalho desperdiçado nos próximos meses. <span class="text-gold font-semibold">Você não tem tempo para NÃO vir.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Objeção 2 -->
+                <div class="bg-bg-card border border-gold/20 p-6 md:p-8">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-gold/10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-icons text-gold text-xl">school</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-text mb-3">"Isso é só mais uma palestra motivacional que não funciona na prática."</h3>
+                            <p class="text-text-muted leading-relaxed font-light">
+                                Não. Aqui não tem discurso bonito sem aplicação. Você sai com o <span class="text-gold font-semibold">Protocolo de 5 Decisões Sob Pressão</span> na mão. Ferramentas práticas que você usa no dia seguinte. Se nos primeiros 30 minutos você sentir que é só conversa, <span class="text-gold font-semibold">pede seu dinheiro de volta</span>. Simples assim.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Objeção 3 -->
+                <div class="bg-bg-card border border-gold/20 p-6 md:p-8">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-gold/10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-icons text-gold text-xl">psychology</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-text mb-3">"Meu problema é de estratégia, não emocional."</h3>
+                            <p class="text-text-muted leading-relaxed font-light">
+                                Você já tentou mil estratégias. Leu os livros. Fez os cursos. E continua travado. Sabe por quê? Porque <span class="text-gold font-semibold">o problema não está na estratégia. Está em quem executa.</span> Suas decisões são movidas por medo, ansiedade e pressão. Quando você destrava isso, a estratégia finalmente funciona.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Objeção 4 -->
+                <div class="bg-bg-card border border-gold/20 p-6 md:p-8">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-gold/10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-icons text-gold text-xl">groups</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-text mb-3">"E se eu me expor na frente de outros empresários?"</h3>
+                            <p class="text-text-muted leading-relaxed font-light">
+                                Ninguém vai te julgar. Todos ali estão na mesma luta que você. Faturam bem, mas sentem a pressão. A vulnerabilidade cria conexão. E é nessa conexão que acontece a transformação. <span class="text-gold font-semibold">Você não está sozinho nessa.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Objeção 5 -->
+                <div class="bg-bg-card border border-gold/20 p-6 md:p-8">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-gold/10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-icons text-gold text-xl">payments</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-text mb-3">"R$ 47 parece pouco... tem pegadinha?"</h3>
+                            <p class="text-text-muted leading-relaxed font-light">
+                                Não tem pegadinha. O valor é baixo porque eu quero que você venha. Quero provar que isso funciona. A garantia é real: se não valer a pena, você pede o dinheiro de volta nos primeiros 30 minutos. <span class="text-gold font-semibold">O risco é todo meu.</span> Você só precisa aparecer.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA após objeções -->
+            <div class="mt-12 text-center">
+                <a href="#inscricao"
+                    class="inline-block bg-gold hover:bg-gold-bright text-bg font-bold text-base px-12 py-5 uppercase tracking-wider transition-all duration-300 animate-pulse-cta btn-primary">
+                    Garantir Minha Vaga
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- SEÇÃO 13: PERGUNTAS FREQUENTES                -->
+    <!-- ============================================= -->
+    <section class="py-20 md:py-32 px-6 md:px-12 bg-charcoal/30">
+        <div class="max-w-3xl mx-auto">
+            
+            <h2 class="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-text mb-4 leading-tight text-center">
+                <span class="text-gradient-gold">PERGUNTAS FREQUENTES</span>
+            </h2>
+
+            <div class="gold-line w-24 mx-auto my-8"></div>
+
+            <div class="mt-12 space-y-4" id="faq-container">
+                
+                <!-- FAQ 1 -->
+                <div class="faq-item bg-bg-card border border-gold/20">
+                    <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" aria-expanded="false">
+                        <span class="font-semibold text-text">Quanto tempo dura o evento?</span>
+                        <span class="material-icons text-gold transition-transform duration-300">expand_more</span>
                     </button>
-                    <div class="faq-answer open" style="max-height: 200px; opacity: 1;">
-                        <div class="pb-6 text-base text-text-muted leading-relaxed font-light">
-                            Não. R$ 50k é uma referência. Se você fatura menos mas tem mentalidade de crescimento, ou muito mais e sente os sintomas do sucesso desalinhado (estresse, conflitos em casa, solidão), este evento é pra você.
+                    <div class="faq-content px-6">
+                        <div class="pb-5 text-text-muted leading-relaxed">
+                            O encontro tem duração de 3 a 4 horas. É um formato concentrado para você aplicar no dia seguinte.
                         </div>
                     </div>
                 </div>
 
                 <!-- FAQ 2 -->
-                <div class="faq-item border-b border-amber/20">
-                    <button class="w-full py-6 flex justify-between items-center text-left focus:outline-none group"
-                        aria-expanded="false">
-                        <span class="font-bold text-base md:text-lg text-text group-hover:text-amber-bright transition-colors">Vai ter lote normal de R$ 197?</span>
-                        <span class="material-icons text-amber transition-transform duration-300">expand_more</span>
+                <div class="faq-item bg-bg-card border border-gold/20">
+                    <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" aria-expanded="false">
+                        <span class="font-semibold text-text">O evento é mesmo em Petrolina?</span>
+                        <span class="material-icons text-gold transition-transform duration-300">expand_more</span>
                     </button>
-                    <div class="faq-answer">
-                        <div class="pb-6 text-base text-text-muted leading-relaxed font-light">
-                            Sim. Após o esgotamento do lote promocional de R$ 47, abriremos o lote normal por R$ 197. Não há previsão de data — depende da velocidade de vendas do lote atual.
+                    <div class="faq-content px-6">
+                        <div class="pb-5 text-text-muted leading-relaxed">
+                            Sim. O encontro acontece presencialmente em Petrolina no dia 17 de março na Arca Treinamentos.
                         </div>
                     </div>
                 </div>
 
                 <!-- FAQ 3 -->
-                <div class="faq-item border-b border-amber/20">
-                    <button class="w-full py-6 flex justify-between items-center text-left focus:outline-none group"
-                        aria-expanded="false">
-                        <span class="font-bold text-base md:text-lg text-text group-hover:text-amber-bright transition-colors">Quanto tempo dura?</span>
-                        <span class="material-icons text-amber transition-transform duration-300">expand_more</span>
+                <div class="faq-item bg-bg-card border border-gold/20">
+                    <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" aria-expanded="false">
+                        <span class="font-semibold text-text">Preciso levar algum material?</span>
+                        <span class="material-icons text-gold transition-transform duration-300">expand_more</span>
                     </button>
-                    <div class="faq-answer">
-                        <div class="pb-6 text-base text-text-muted leading-relaxed font-light">
-                            O evento principal tem duração de aproximadamente 3 horas, seguido de um momento de networking livre. Horário exato será comunicado via WhatsApp aos inscritos.
+                    <div class="faq-content px-6">
+                        <div class="pb-5 text-text-muted leading-relaxed">
+                            Não. Leve apenas você, sua disposição para encarar a verdade e um caderno se quiser anotar. O resto a gente entrega.
                         </div>
                     </div>
                 </div>
 
                 <!-- FAQ 4 -->
-                <div class="faq-item border-b border-amber/20">
-                    <button class="w-full py-6 flex justify-between items-center text-left focus:outline-none group"
-                        aria-expanded="false">
-                        <span class="font-bold text-base md:text-lg text-text group-hover:text-amber-bright transition-colors">É palestra motivacional?</span>
-                        <span class="material-icons text-amber transition-transform duration-300">expand_more</span>
+                <div class="faq-item bg-bg-card border border-gold/20">
+                    <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" aria-expanded="false">
+                        <span class="font-semibold text-text">A garantia funciona mesmo?</span>
+                        <span class="material-icons text-gold transition-transform duration-300">expand_more</span>
                     </button>
-                    <div class="faq-answer">
-                        <div class="pb-6 text-base text-text-muted leading-relaxed font-light">
-                            Não. Zero "uhuuu". É mentoria coletiva com protocolo prático. Você sai com ferramentas para aplicar no dia seguinte na sua empresa e na sua casa. Sem fórmula mágica, sem grito de guerra.
+                    <div class="faq-content px-6">
+                        <div class="pb-5 text-text-muted leading-relaxed">
+                            Sim. Se nos primeiros 30 minutos você sentir que não é para você, basta avisar no local e devolvemos seu dinheiro. Sem perguntas.
                         </div>
                     </div>
                 </div>
 
                 <!-- FAQ 5 -->
-                <div class="faq-item border-b border-amber/20">
-                    <button class="w-full py-6 flex justify-between items-center text-left focus:outline-none group"
-                        aria-expanded="false">
-                        <span class="font-bold text-base md:text-lg text-text group-hover:text-amber-bright transition-colors">E se eu não gostar?</span>
-                        <span class="material-icons text-amber transition-transform duration-300">expand_more</span>
+                <div class="faq-item bg-bg-card border border-gold/20">
+                    <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" aria-expanded="false">
+                        <span class="font-semibold text-text">Vou conseguir aplicar isso na minha empresa?</span>
+                        <span class="material-icons text-gold transition-transform duration-300">expand_more</span>
                     </button>
-                    <div class="faq-answer">
-                        <div class="pb-6 text-base text-text-muted leading-relaxed font-light">
-                            Se nos primeiros 30 minutos você sentir que não é pra você, levante a mão. Devolvemos 100% do valor na hora, sem burocracia. O risco é todo nosso.
+                    <div class="faq-content px-6">
+                        <div class="pb-5 text-text-muted leading-relaxed">
+                            Sim. O protocolo é prático e direto. Você sai com passos claros para aplicar no dia seguinte, não teoria para engavetar.
                         </div>
                     </div>
                 </div>
 
                 <!-- FAQ 6 -->
-                <div class="faq-item border-b border-amber/20">
-                    <button class="w-full py-6 flex justify-between items-center text-left focus:outline-none group"
-                        aria-expanded="false">
-                        <span class="font-bold text-base md:text-lg text-text group-hover:text-amber-bright transition-colors">Onde será?</span>
-                        <span class="material-icons text-amber transition-transform duration-300">expand_more</span>
+                <div class="faq-item bg-bg-card border border-gold/20">
+                    <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" aria-expanded="false">
+                        <span class="font-semibold text-text">Tem certificado?</span>
+                        <span class="material-icons text-gold transition-transform duration-300">expand_more</span>
                     </button>
-                    <div class="faq-answer">
-                        <div class="pb-6 text-base text-text-muted leading-relaxed font-light">
-                            Em Petrolina-PE. O endereço exato será enviado por WhatsApp para todos os inscritos 48h antes do evento.
+                    <div class="faq-content px-6">
+                        <div class="pb-5 text-text-muted leading-relaxed">
+                            Não. Isso não é curso. É uma intervenção prática para destravar o que te impede de crescer sem destruir sua vida.
                         </div>
                     </div>
                 </div>
 
                 <!-- FAQ 7 -->
-                <div class="faq-item border-b border-amber/20">
-                    <button class="w-full py-6 flex justify-between items-center text-left focus:outline-none group"
-                        aria-expanded="false">
-                        <span class="font-bold text-base md:text-lg text-text group-hover:text-amber-bright transition-colors">R$ 47 é muito barato. Qual é a pegada?</span>
-                        <span class="material-icons text-amber transition-transform duration-300">expand_more</span>
+                <div class="faq-item bg-bg-card border border-gold/20">
+                    <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" aria-expanded="false">
+                        <span class="font-semibold text-text">Posso levar alguém da minha equipe?</span>
+                        <span class="material-icons text-gold transition-transform duration-300">expand_more</span>
                     </button>
-                    <div class="faq-answer">
-                        <div class="pb-6 text-base text-text-muted leading-relaxed font-light">
-                            O valor é uma taxa de compromisso, não de lucro. Queremos apenas quem realmente vai comparecer. O evento poderia custar R$ 497 (e vai custar no futuro).
+                    <div class="faq-content px-6">
+                        <div class="pb-5 text-text-muted leading-relaxed">
+                            Este encontro é desenhado para o dono do negócio. É sobre você primeiro. Depois você multiplica na sua equipe.
                         </div>
                     </div>
                 </div>
 
-                <!-- FAQ 8 — Terça-feira -->
-                <div class="faq-item border-b border-amber/20">
-                    <button class="w-full py-6 flex justify-between items-center text-left focus:outline-none group"
-                        aria-expanded="false">
-                        <span class="font-bold text-base md:text-lg text-text group-hover:text-amber-bright transition-colors">Mas é numa terça-feira à noite. Como saio da empresa?</span>
-                        <span class="material-icons text-amber transition-transform duration-300">expand_more</span>
+                <!-- FAQ 8 -->
+                <div class="faq-item bg-bg-card border border-gold/20">
+                    <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" aria-expanded="false">
+                        <span class="font-semibold text-text">E se eu não conseguir me ausentar da empresa por meio período?</span>
+                        <span class="material-icons text-gold transition-transform duration-300">expand_more</span>
                     </button>
-                    <div class="faq-answer">
-                        <div class="pb-6 text-base text-text-muted leading-relaxed font-light">
-                            Esse é exatamente o ponto. Se você não consegue sair da empresa por 4 horas sem que tudo desmorone, o problema é maior do que você imagina — e esse evento foi feito para resolver isso. O evento é à noite (19h) para não comprometer seu dia de trabalho.
+                    <div class="faq-content px-6">
+                        <div class="pb-5 text-text-muted leading-relaxed">
+                            Se sua empresa não sobrevive 4 horas sem você, este é exatamente o problema que vamos resolver. Essa é a compressão.
                         </div>
                     </div>
                 </div>
 
                 <!-- FAQ 9 -->
-                <div class="faq-item border-b border-amber/20">
-                    <button class="w-full py-6 flex justify-between items-center text-left focus:outline-none group"
-                        aria-expanded="false">
-                        <span class="font-bold text-base md:text-lg text-text group-hover:text-amber-bright transition-colors">Quando acaba o lote promocional?</span>
-                        <span class="material-icons text-amber transition-transform duration-300">expand_more</span>
+                <div class="faq-item bg-bg-card border border-gold/20">
+                    <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" aria-expanded="false">
+                        <span class="font-semibold text-text">Tem networking no evento?</span>
+                        <span class="material-icons text-gold transition-transform duration-300">expand_more</span>
                     </button>
-                    <div class="faq-answer">
-                        <div class="pb-6 text-base text-text-muted leading-relaxed font-light">
-                            O lote promocional de R$ 47 está com 90% das unidades vendidas. Não temos data definida para encerramento — pode acontecer a qualquer momento quando atingirmos a capacidade.
+                    <div class="faq-content px-6">
+                        <div class="pb-5 text-text-muted leading-relaxed">
+                            Sim. Você vai estar com outros empresários de Petrolina que faturam no mesmo nível. As conexões acontecem naturalmente.
                         </div>
                     </div>
                 </div>
 
+                <!-- FAQ 10 -->
+                <div class="faq-item bg-bg-card border border-gold/20">
+                    <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" aria-expanded="false">
+                        <span class="font-semibold text-text">Qual o perfil dos participantes?</span>
+                        <span class="material-icons text-gold transition-transform duration-300">expand_more</span>
+                    </button>
+                    <div class="faq-content px-6">
+                        <div class="pb-5 text-text-muted leading-relaxed">
+                            Empresários que faturam 50 mil reais ou mais por mês e sentem que chegaram em um teto invisível de crescimento.
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
 
     <!-- ============================================= -->
-    <!-- SEÇÃO 12 — FORMULÁRIO PRÉ-CHECKOUT            -->
+    <!-- SEÇÃO FORMULÁRIO DE INSCRIÇÃO                 -->
     <!-- ============================================= -->
-    <section id="inscricao" class="py-20 md:py-32 px-6 md:px-8 bg-bg-deep">
-        <div class="max-w-mobile mx-auto">
-
-            <h2 class="font-serif text-3xl md:text-5xl font-black text-text mb-12 leading-tight text-center">
-                Garanta sua<br>
-                <span class="text-amber-bright">vaga agora</span>
+    <section id="inscricao" class="py-20 md:py-32 px-6 md:px-12 bg-bg-deep">
+        <div class="max-w-lg mx-auto">
+            
+            <h2 class="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-text mb-4 leading-tight text-center">
+                Garanta sua <span class="text-gradient-gold">vaga agora</span>
             </h2>
 
+            <div class="gold-line w-24 mx-auto my-8"></div>
+
+            <!-- Price reminder -->
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 px-6 py-3">
+                    <span class="text-gold font-bold text-2xl">R$ 47</span>
+                    <span class="text-text-muted text-sm">• Lote promocional</span>
+                </div>
+            </div>
+
             <!-- Form Card -->
-            <div class="bg-bg-card border-2 border-amber/30 p-8 md:p-10 relative">
-                <div class="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-amber/20"></div>
+            <div class="bg-bg-card border-2 border-gold/30 p-8 md:p-10 relative">
                 
                 <form id="registration-form" class="space-y-6" novalidate>
 
                     <!-- Nome -->
                     <div>
-                        <label for="name" class="block text-[10px] font-black uppercase tracking-[0.3em] text-amber mb-3">
+                        <label for="name" class="block text-xs font-bold uppercase tracking-widest text-gold mb-3">
                             Nome completo
                         </label>
                         <input type="text" id="name" name="name" required autocomplete="name"
-                            class="w-full bg-bg-deep border-2 border-amber/30 px-5 py-4 text-base text-text outline-none transition-all duration-200 focus:border-amber"
+                            class="w-full bg-bg-deep border-2 border-gold/30 px-5 py-4 text-base text-text outline-none transition-all duration-200 focus:border-gold"
                             style="font-size: 16px;"
-                            placeholder="Seu nome">
+                            placeholder="Seu nome completo">
                     </div>
 
                     <!-- E-mail -->
                     <div>
-                        <label for="email" class="block text-[10px] font-black uppercase tracking-[0.3em] text-amber mb-3">
+                        <label for="email" class="block text-xs font-bold uppercase tracking-widest text-gold mb-3">
                             E-mail
                         </label>
                         <input type="email" id="email" name="email" required autocomplete="email"
-                            class="w-full bg-bg-deep border-2 border-amber/30 px-5 py-4 text-base text-text outline-none transition-all duration-200 focus:border-amber"
+                            class="w-full bg-bg-deep border-2 border-gold/30 px-5 py-4 text-base text-text outline-none transition-all duration-200 focus:border-gold"
                             style="font-size: 16px;"
                             placeholder="seu@email.com">
                     </div>
 
                     <!-- WhatsApp -->
                     <div>
-                        <label for="whatsapp" class="block text-[10px] font-black uppercase tracking-[0.3em] text-amber mb-3">
+                        <label for="whatsapp" class="block text-xs font-bold uppercase tracking-widest text-gold mb-3">
                             WhatsApp
                         </label>
                         <input type="tel" id="whatsapp" name="whatsapp" required autocomplete="tel"
-                            class="w-full bg-bg-deep border-2 border-amber/30 px-5 py-4 text-base text-text outline-none transition-all duration-200 focus:border-amber"
+                            class="w-full bg-bg-deep border-2 border-gold/30 px-5 py-4 text-base text-text outline-none transition-all duration-200 focus:border-gold"
                             style="font-size: 16px;"
                             placeholder="(XX) XXXXX-XXXX">
                     </div>
 
                     <!-- Submit -->
                     <button type="submit" id="submit-btn"
-                        class="w-full bg-amber hover:bg-amber-bright text-bg font-black py-5 text-sm md:text-base uppercase tracking-wider transition-all duration-300 pulse-cta"
-                        style="box-shadow: 0 8px 32px rgba(212, 165, 116, 0.3);">
-                        Garantir Vaga — R$ 47
+                        class="w-full bg-gold hover:bg-gold-bright text-bg font-bold py-5 text-base uppercase tracking-wider transition-all duration-300 animate-pulse-cta btn-primary">
+                        SIM, EU QUERO DESTRAVAR MEU PRÓXIMO NÍVEL
                     </button>
 
-                    <!-- Security & Disclaimer -->
+                    <!-- Security -->
                     <div class="text-center space-y-2 pt-4">
                         <div class="flex items-center justify-center gap-2 text-xs text-text-muted/60">
-                            <span class="material-icons text-[14px]">lock</span>
+                            <span class="material-icons text-sm">lock</span>
                             <span>Seus dados estão seguros</span>
                         </div>
                         <p class="text-xs text-text-muted/40">
-                            Ao clicar, você será redirecionado para o checkout seguro da Kiwify.
+                            Ao clicar, você será redirecionado para o checkout seguro.
                         </p>
                     </div>
                 </form>
+            </div>
+
+            <!-- Guarantee badge -->
+            <div class="mt-6 flex items-center justify-center gap-3">
+                <span class="material-icons text-gold">verified_user</span>
+                <span class="text-sm text-text-muted">Garantia de 30 minutos ou seu dinheiro de volta</span>
             </div>
         </div>
     </section>
 
 
     <!-- ============================================= -->
-    <!-- SEÇÃO 13 — FOOTER                             -->
+    <!-- FOOTER                                        -->
     <!-- ============================================= -->
-    <footer class="py-16 px-6 bg-bg-deep border-t border-amber/10">
-        <div class="max-w-content mx-auto">
+    <footer class="py-16 px-6 md:px-12 bg-bg-deep border-t border-gold/10">
+        <div class="max-w-wide mx-auto">
+            
             <div class="text-center mb-8">
-                <p class="text-xs font-black uppercase tracking-[0.3em] text-amber mb-2">
+                <p class="text-xs font-bold uppercase tracking-widest text-gold mb-2">
                     IE Empresarial Petrolina
                 </p>
                 <p class="text-sm text-text-muted">
-                    17/03/2026 • 19h • Petrolina-PE
+                    17/03/2026 • A partir das 19h • Petrolina-PE
                 </p>
             </div>
             
             <div class="flex justify-center gap-6 text-xs mb-8">
-                <a href="#" class="text-text-muted hover:text-amber transition-colors uppercase tracking-wider">Termos</a>
+                <a href="#" class="text-text-muted hover:text-gold transition-colors uppercase tracking-wider">Termos</a>
                 <span class="text-text-muted/30">•</span>
-                <a href="#" class="text-text-muted hover:text-amber transition-colors uppercase tracking-wider">Privacidade</a>
+                <a href="#" class="text-text-muted hover:text-gold transition-colors uppercase tracking-wider">Privacidade</a>
             </div>
             
             <p class="text-xs text-center text-text-muted/40">
@@ -956,7 +1328,72 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <!-- JavaScript -->
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-item button').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const content = faqItem.querySelector('.faq-content');
+                const icon = button.querySelector('.material-icons');
+                const isOpen = content.classList.contains('open');
+
+                // Close all others
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.querySelector('.faq-content').classList.remove('open');
+                    item.querySelector('.faq-content').style.maxHeight = null;
+                    item.querySelector('.material-icons').style.transform = 'rotate(0deg)';
+                    item.querySelector('button').setAttribute('aria-expanded', 'false');
+                });
+
+                // Toggle current
+                if (!isOpen) {
+                    content.classList.add('open');
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.style.transform = 'rotate(180deg)';
+                    button.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // Reveal on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+
+        // Form submission (placeholder)
+        document.getElementById('registration-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Redirecionando para o checkout...');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
